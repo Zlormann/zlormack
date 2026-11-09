@@ -30,6 +30,7 @@ import sys
 BASE_URL = "https://zlormann.github.io/zlormack/"
 CARTES_URL = BASE_URL + "cartes/"
 YOUTUBE_URL = "https://www.youtube.com/@Zlormack"
+BLOG_URL = "https://zlormack-game-enjoy.blogspot.com/"
 TITLE = "Wallpapers gaming gratuits, PC et mobile : Zlormack Gaming"
 DESC = ("Un fond d'écran gaming gratuit chaque jour pour PC et téléphone : loups, forêts, aurores, villes néon. "
         "Et les cartes à collectionner Zlormack.")
@@ -181,7 +182,7 @@ def prerender(page, index):
 
 def json_ld(kind, index):
     org = {"@type": "Organization", "@id": BASE_URL + "#org", "name": "Zlormack Gaming", "url": BASE_URL,
-           "logo": {"@type": "ImageObject", "url": BASE_URL + "logo.png"}, "sameAs": [YOUTUBE_URL]}
+           "logo": {"@type": "ImageObject", "url": BASE_URL + "logo.png"}, "sameAs": [YOUTUBE_URL, BLOG_URL]}
     site = {"@type": "WebSite", "@id": BASE_URL + "#site", "url": BASE_URL, "name": "Zlormack Gaming",
             "inLanguage": "fr-FR", "publisher": {"@id": BASE_URL + "#org"}}
     graph = [site, org]
