@@ -20,6 +20,7 @@ gratuites (lune-de-*) et les dos de cartes (dos-niveau*). Il refuse aussi une pa
 """
 import argparse
 import datetime
+import html
 import json
 import os
 import re
@@ -27,9 +28,19 @@ import shutil
 import sys
 
 BASE_URL = "https://zlormann.github.io/zlormack/"
-TITLE = "Zlormack Gaming : wallpapers gratuits et cartes à collectionner"
-DESC = ("Un wallpaper gratuit chaque jour pour PC et mobile, et les cartes à collectionner Zlormack : "
-        "niveaux, packs mensuels, concours de Noël.")
+CARTES_URL = BASE_URL + "cartes/"
+YOUTUBE_URL = "https://www.youtube.com/@Zlormack"
+TITLE = "Wallpapers gaming gratuits, PC et mobile : Zlormack Gaming"
+DESC = ("Un fond d'écran gaming gratuit chaque jour pour PC et téléphone : loups, forêts, aurores, villes néon. "
+        "Et les cartes à collectionner Zlormack.")
+CARTES_TITLE = "Cartes à collectionner Zlormack : loups, niveaux et packs"
+CARTES_DESC = ("Cartes à collectionner 100 % numériques : loups en 4 finitions (basique, métal, or, holo), numérotées, "
+               "une carte gratuite par pack, nouveau pack le 9 du mois.")
+OG_ALT = "Un fond d'écran Zlormack Gaming : ambiance sombre et verte"
+MONTHS = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"]
+MONTHS_SHORT = ["janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc."]
+WEEKDAYS = ["lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi", "dimanche"]
+WEEKDAYS_SHORT = ["lun.", "mar.", "mer.", "jeu.", "ven.", "sam.", "dim."]
 RESET = ("<style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);"
          "padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}"
          "body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}"
@@ -99,8 +110,108 @@ def cmd_needs(a):
     print("\n".join(sorted(need)))
 
 
-def full_document(page):
-    """Transforme le fragment publié (title, link, style, puis contenu) en document HTML complet."""
+def esc(s):
+    return html.escape(str(s), quote=False).replace('"', "&quot;")
+
+
+def long_date(iso):
+    d = datetime.date.fromisoformat(iso)
+    return "%s %s %s %d" % (WEEKDAYS[d.weekday()], "1er" if d.day == 1 else d.day, MONTHS[d.month - 1], d.year)
+
+
+def day_month(iso):
+    d = datetime.date.fromisoformat(iso)
+    return "%s %s" % ("1er" if d.day == 1 else d.day, MONTHS[d.month - 1])
+
+
+def short_date(iso):
+    d = datetime.date.fromisoformat(iso)
+    return "%s %d %s" % (WEEKDAYS_SHORT[d.weekday()], d.day, MONTHS_SHORT[d.month - 1])
+
+
+def prerender(page, index):
+    """Écrit dans le HTML le contenu du jour que la page remplit sinon par JavaScript (titre, date, images, historique).
+    Un robot qui n'exécute pas le script, et le navigateur avant le script, voient déjà le vrai contenu.
+    Les textes sont les mêmes que ceux du script de la page : celui-ci les réécrit à l'identique au chargement."""
+    days = index.get("days") or []
+    if not days:
+        return page
+    d = days[0]
+    f = d.get("files") or {}
+    pc, mob = f.get("pcSigned"), f.get("mobileSigned")
+    if not (pc and mob and d.get("date") and d.get("theme")):
+        return page
+    theme = d["theme"]
+    n = len(days)
+    items = []
+    for x in days:
+        xf = x.get("files") or {}
+        items.append(
+            '<li><button type="button" class="card" data-date="%s" aria-label="%s"><div class="thumbs">'
+            '<img class="t-pc" loading="lazy" alt="%s" src="%s"><img class="t-mob" loading="lazy" alt="" src="%s"></div>'
+            '<span class="d">%s</span><span class="n">%s</span></button></li>'
+            % (esc(x["date"]), esc("%s, %s" % (day_month(x["date"]), x["theme"])),
+               esc("%s : aperçu du fond d’écran du %s" % (x["theme"], day_month(x["date"]))),
+               esc(xf.get("pcThumb", "")), esc(xf.get("mobileThumb", "")), esc(short_date(x["date"])), esc(x["theme"])))
+    note = ("Le premier jour est en ligne. Un nouveau wallpaper s’ajoute chaque matin et l’historique se remplit ici."
+            if n == 1 else "%d wallpapers disponibles. Clique sur un jour pour le voir en grand." % n)
+    reps = [
+        ('<p class="eyebrow" id="dateLabel">&nbsp;</p>', '<p class="eyebrow" id="dateLabel">%s</p>' % esc(long_date(d["date"]))),
+        ('<h1 id="themeName">Chargement</h1>', '<h1 id="themeName">%s</h1>' % esc(theme)),
+        ('<img id="pcImg" alt="Wallpaper pour ordinateur" width="1920" height="1080">',
+         '<img id="pcImg" src="%s" alt="%s" width="1920" height="1080" fetchpriority="high">'
+         % (esc(pc), esc("Fond d’écran PC « %s », signé Zlormack, 1920 × 1080" % theme))),
+        ('<img id="mobImg" alt="Wallpaper pour téléphone" width="1080" height="1920">',
+         '<img id="mobImg" src="%s" alt="%s" width="1080" height="1920">'
+         % (esc(mob), esc("Fond d’écran téléphone « %s », signé Zlormack, 1080 × 1920" % theme))),
+        ('<a id="pcLink" href="#"', '<a id="pcLink" href="%s"' % esc(pc)),
+        ('<a id="mobLink" href="#"', '<a id="mobLink" href="%s"' % esc(mob)),
+        ('<p id="hNote"></p>', '<p id="hNote">%s</p>' % esc(note)),
+        ('<ol id="grid"></ol>', '<ol id="grid">%s</ol>' % "".join(items)),
+    ]
+    for old, new in reps:
+        if page.count(old) != 1:
+            print("avertissement : repère de prérendu introuvable ou en double : %s" % old[:50], file=sys.stderr)
+            continue
+        page = page.replace(old, new, 1)
+    return page
+
+
+def json_ld(kind, index):
+    org = {"@type": "Organization", "@id": BASE_URL + "#org", "name": "Zlormack Gaming", "url": BASE_URL,
+           "logo": {"@type": "ImageObject", "url": BASE_URL + "logo.png"}, "sameAs": [YOUTUBE_URL]}
+    site = {"@type": "WebSite", "@id": BASE_URL + "#site", "url": BASE_URL, "name": "Zlormack Gaming",
+            "inLanguage": "fr-FR", "publisher": {"@id": BASE_URL + "#org"}}
+    graph = [site, org]
+    if kind == "cartes":
+        graph.append({
+            "@type": "CollectionPage", "@id": CARTES_URL + "#page", "url": CARTES_URL, "name": CARTES_TITLE,
+            "description": CARTES_DESC, "inLanguage": "fr-FR", "isPartOf": {"@id": BASE_URL + "#site"},
+            "breadcrumb": {"@type": "BreadcrumbList", "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Wallpapers", "item": BASE_URL},
+                {"@type": "ListItem", "position": 2, "name": "Cartes à collectionner", "item": CARTES_URL}]}})
+    else:
+        site["description"] = DESC
+        days = index.get("days") or []
+        if days:
+            d = days[0]
+            f = d.get("files") or {}
+            for key, label, w, h in (("pcSigned", "PC", 1920, 1080), ("mobileSigned", "téléphone", 1080, 1920)):
+                if f.get(key):
+                    graph.append({
+                        "@type": "ImageObject", "contentUrl": BASE_URL + f[key], "width": w, "height": h,
+                        "name": "Fond d’écran %s « %s »" % (label, d["theme"]),
+                        "description": "Fond d’écran gaming gratuit « %s » pour %s, %d × %d, du %s."
+                                       % (d["theme"], "ordinateur" if label == "PC" else "téléphone", w, h, long_date(d["date"])),
+                        "datePublished": d["date"], "creator": {"@id": BASE_URL + "#org"}, "inLanguage": "fr-FR"})
+    text = json.dumps({"@context": "https://schema.org", "@graph": graph}, ensure_ascii=False)
+    return '<script type="application/ld+json">%s</script>' % text.replace("</", "<\\/")
+
+
+def full_document(page, kind="home", index=None):
+    """Transforme le fragment publié (title, link, style, puis contenu) en document HTML complet.
+    kind = « home » (page d'accueil) ou « cartes » (même page, ouverte sur l'onglet Cartes, avec ses propres titre,
+    description et adresse : c'est elle que les moteurs de recherche indexent pour les cartes)."""
     end = page.find("</style>")
     if end < 0:
         sys.exit("page.html.txt : balise </style> introuvable")
@@ -108,28 +219,67 @@ def full_document(page):
     head, body = page[:end], page[end:]
     head = re.sub(r"<title>.*?</title>\s*", "", head, flags=re.S)
     head = re.sub(r'<meta name="claude:[^>]*>\s*', "", head)
-    body = body.replace("document.title = 'Zlormack Gaming';",
-                        "document.title = %s;" % json.dumps(TITLE, ensure_ascii=False))
-    seo = "\n".join([
-        '<title>%s</title>' % TITLE,
-        '<meta name="description" content="%s">' % DESC,
+    cartes = kind == "cartes"
+    title, desc, url = (CARTES_TITLE, CARTES_DESC, CARTES_URL) if cartes else (TITLE, DESC, BASE_URL)
+    body = body.replace("document.title = 'Zlormack Gaming';", "document.title = %s;" % json.dumps(title, ensure_ascii=False))
+    index = index or {}
+    try:
+        body = prerender(body, index)
+    except Exception as e:                    # le prérendu est un plus : sans lui, la page marche comme avant
+        print("avertissement : prérendu ignoré : %s" % e, file=sys.stderr)
+    try:
+        ld = json_ld(kind, index)
+    except Exception as e:
+        print("avertissement : données structurées ignorées : %s" % e, file=sys.stderr)
+        ld = ""
+    seo = [
+        '<title>%s</title>' % esc(title),
+        '<meta name="description" content="%s">' % esc(desc),
+        '<meta name="robots" content="index,follow,max-image-preview:large">',
         '<meta name="theme-color" content="#060a07">',
-        '<link rel="canonical" href="%s">' % BASE_URL,
+        '<link rel="canonical" href="%s">' % url,
         '<link rel="icon" type="image/png" href="favicon.png">',
+        '<link rel="apple-touch-icon" href="apple-touch-icon.png">',
         '<meta property="og:type" content="website">',
         '<meta property="og:site_name" content="Zlormack Gaming">',
         '<meta property="og:locale" content="fr_FR">',
-        '<meta property="og:title" content="%s">' % TITLE,
-        '<meta property="og:description" content="%s">' % DESC,
-        '<meta property="og:url" content="%s">' % BASE_URL,
+        '<meta property="og:title" content="%s">' % esc(title),
+        '<meta property="og:description" content="%s">' % esc(desc),
+        '<meta property="og:url" content="%s">' % url,
         '<meta property="og:image" content="%sog.jpg">' % BASE_URL,
         '<meta property="og:image:width" content="1200">',
         '<meta property="og:image:height" content="630">',
+        '<meta property="og:image:alt" content="%s">' % esc(OG_ALT),
         '<meta name="twitter:card" content="summary_large_image">',
-    ])
+        '<meta name="twitter:title" content="%s">' % esc(title),
+        '<meta name="twitter:description" content="%s">' % esc(desc),
+        '<meta name="twitter:image" content="%sog.jpg">' % BASE_URL,
+        ld,
+        # sans JavaScript, les deux onglets s'affichent l'un sous l'autre (le sélecteur d'onglets est masqué)
+        '<noscript><style>#panelWall[hidden],#panelCartes[hidden]{display:block!important}.tabs{display:none!important}</style></noscript>',
+    ]
+    if cartes:
+        seo.insert(0, '<base href="../">')                  # la page /cartes/ lit index.json, logo.png, img/... à la racine du site
+        seo.append('<script>window.ZLO_START="cartes";</script>')
     return ('<!doctype html>\n<html lang="fr">\n<head>\n<meta charset="utf-8">\n'
             '<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">\n'
-            + seo + "\n" + RESET + "\n" + head.strip() + "\n</head>\n<body>" + body.rstrip() + "\n</html>\n")
+            + "\n".join(s for s in seo if s) + "\n" + RESET + "\n" + head.strip() + "\n</head>\n<body>" + body.rstrip() + "\n</html>\n")
+
+
+def sitemap(index):
+    days = index.get("days") or []
+    lastmod = index.get("updated") or (days[0].get("date") if days else "")
+    imgs = []
+    for d in days:                            # images signées de chaque jour : le plan du site aide Google Images
+        for key in ("pcSigned", "mobileSigned"):
+            p = (d.get("files") or {}).get(key)
+            if p:
+                imgs.append("    <image:image><image:loc>%s</image:loc></image:image>" % esc(BASE_URL + p))
+    lm = "    <lastmod>%s</lastmod>\n" % lastmod if lastmod else ""
+    return ('<?xml version="1.0" encoding="UTF-8"?>\n'
+            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n'
+            '  <url>\n    <loc>%s</loc>\n%s%s\n  </url>\n'
+            '  <url>\n    <loc>%s</loc>\n  </url>\n</urlset>\n' % (BASE_URL, lm, "\n".join(imgs), CARTES_URL))
 
 
 def make_extras(repo, latest_pc):
@@ -140,6 +290,16 @@ def make_extras(repo, latest_pc):
         im = Image.open(logo).convert("RGBA")
         im.thumbnail((128, 128), Image.LANCZOS)
         im.save(fav, optimize=True)
+    touch = os.path.join(repo, "apple-touch-icon.png")
+    if not os.path.exists(touch) and os.path.exists(logo):      # icône d'écran d'accueil iPhone : logo centré sur fond sombre
+        try:
+            lg = Image.open(logo).convert("RGBA")
+            lg.thumbnail((150, 150), Image.LANCZOS)
+            tile = Image.new("RGBA", (180, 180), (6, 10, 7, 255))
+            tile.alpha_composite(lg, ((180 - lg.width) // 2, (180 - lg.height) // 2))
+            tile.convert("RGB").save(touch, optimize=True)
+        except Exception as e:
+            print("avertissement : apple-touch-icon non créée : %s" % e, file=sys.stderr)
     og = os.path.join(repo, "og.jpg")
     if not os.path.exists(og) and latest_pc and os.path.exists(latest_pc):
         im = Image.open(latest_pc).convert("RGB")
@@ -193,12 +353,25 @@ def cmd_build(a):
         latest = os.path.join(a.repo, latest_files.get("pcSigned", ""))
     make_extras(a.repo, latest)
     with open(os.path.join(a.repo, "index.html"), "w", encoding="utf-8") as f:
-        f.write(full_document(page))
-    for name, text in ((".nojekyll", ""), ("robots.txt", "User-agent: *\nAllow: /\n")):
-        p = os.path.join(a.repo, name)
-        if not os.path.exists(p):
-            with open(p, "w", encoding="utf-8") as f:
-                f.write(text)
+        f.write(full_document(page, "home", index))
+    try:                                      # page /cartes/ : même contenu, onglet Cartes ouvert, titre et adresse à elle
+        doc = full_document(page, "cartes", index)
+        os.makedirs(os.path.join(a.repo, "cartes"), exist_ok=True)
+        with open(os.path.join(a.repo, "cartes", "index.html"), "w", encoding="utf-8") as f:
+            f.write(doc)
+    except Exception as e:
+        print("avertissement : page /cartes/ non fabriquée : %s" % e, file=sys.stderr)
+    try:
+        with open(os.path.join(a.repo, "sitemap.xml"), "w", encoding="utf-8") as f:
+            f.write(sitemap(index))
+    except Exception as e:
+        print("avertissement : sitemap.xml non fabriqué : %s" % e, file=sys.stderr)
+    with open(os.path.join(a.repo, "robots.txt"), "w", encoding="utf-8") as f:
+        f.write("User-agent: *\nAllow: /\n\nSitemap: %ssitemap.xml\n" % BASE_URL)
+    nj = os.path.join(a.repo, ".nojekyll")
+    if not os.path.exists(nj):
+        with open(nj, "w", encoding="utf-8") as f:
+            f.write("")
     print(json.dumps({"jours": sorted(keep), "fichiers_copies": len(updated), "supprimes": removed},
                      ensure_ascii=False))
 
