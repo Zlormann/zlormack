@@ -38,7 +38,7 @@ CARTES_DESC = ("Cartes à collectionner 100 % numériques : loups en 4 finitions
                "une carte gratuite par pack, nouveau pack le 9 du mois.")
 OG_ALT = "Un fond d'écran Zlormack Gaming : ambiance sombre et verte"
 # Vérification de propriété (Google Search Console, Bing) : colle ici la valeur « content » de la balise fournie, puis relance la copie.
-SITE_VERIFICATION = {"google-site-verification": "", "msvalidate.01": ""}
+SITE_VERIFICATION = {"google-site-verification": "CN0ktcLFJPIokkzKyonJzav9Uxg_a5igPrmx530zDlM", "msvalidate.01": ""}
 MONTHS = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"]
 MONTHS_SHORT = ["janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc."]
 WEEKDAYS = ["lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi", "dimanche"]
