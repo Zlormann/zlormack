@@ -1,0 +1,546 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Zlormack Gaming : wallpapers gratuits et cartes à collectionner</title>
+<meta name="description" content="Un wallpaper gratuit chaque jour pour PC et mobile, et les cartes à collectionner Zlormack : niveaux, packs mensuels, concours de Noël.">
+<meta name="theme-color" content="#060a07">
+<link rel="canonical" href="https://zlormann.github.io/zlormack/">
+<link rel="icon" type="image/png" href="favicon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Zlormack Gaming">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="Zlormack Gaming : wallpapers gratuits et cartes à collectionner">
+<meta property="og:description" content="Un wallpaper gratuit chaque jour pour PC et mobile, et les cartes à collectionner Zlormack : niveaux, packs mensuels, concours de Noël.">
+<meta property="og:url" content="https://zlormann.github.io/zlormack/">
+<meta property="og:image" content="https://zlormann.github.io/zlormack/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&display=swap">
+<style>
+/* Concept : affiche de studio. Le wallpaper du jour en grand (PC et mobile à la même hauteur), l'historique en vignettes dessous. Look unique, noir et vert néon de la marque. */
+:root {
+  --bg: #060a07;
+  --surface: #0b120d;
+  --raise: #111b14;
+  --line: #1c2c21;
+  --fg: #eaf3e8;
+  --muted: #8ba08f;
+  --lime: #7cff00;
+  --lime-ink: #0a1405;
+  --f-display: 'Barlow Condensed', 'Arial Narrow', 'Helvetica Neue', sans-serif;
+  --f-body: 'Barlow', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: 400 16px/1.5 var(--f-body);
+  padding-block: 20px 56px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.wrap { max-width: 1180px; margin: 0 auto; display: flex; flex-direction: column; gap: 36px; }
+a { color: var(--lime); }
+:focus-visible { outline: 2px solid var(--lime); outline-offset: 3px; }
+
+.top { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.brand { display: flex; align-items: center; gap: 14px; min-width: 0; }
+.brand img { height: 46px; width: auto; display: block; }
+.brand span { font: 700 22px/1 var(--f-display); letter-spacing: .22em; text-transform: uppercase; }
+.meta { margin: 0; color: var(--muted); font-size: 14px; }
+
+.promo { display: flex; align-items: center; justify-content: space-between; gap: 18px 28px; flex-wrap: wrap; background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--lime); border-radius: 8px; padding: 20px 22px; }
+.promo[hidden] { display: none; }
+.promo-txt { display: flex; flex-direction: column; gap: 8px; flex: 1 1 380px; min-width: 0; }
+.promo h2 { margin: 0; font: 700 clamp(24px, 3.6vw, 34px)/1 var(--f-display); text-transform: uppercase; letter-spacing: .02em; text-wrap: balance; }
+.promo p { margin: 0; color: var(--muted); font-size: 15px; }
+.promo .eyebrow { color: var(--lime); }
+.btn { display: inline-block; background: var(--lime); color: var(--lime-ink); font: 700 16px/1 var(--f-body); text-decoration: none; padding: 15px 22px; border-radius: 6px; text-align: center; }
+.btn:hover { filter: brightness(1.08); }
+.btn.line { background: transparent; color: var(--lime); border: 1px solid var(--lime); padding: 11px 16px; font-size: 15px; }
+.btn.line:hover { background: rgba(124, 255, 0, .1); filter: none; }
+.actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; }
+.actions [hidden] { display: none; }
+
+.head { display: flex; flex-direction: column; gap: 10px; margin-bottom: 18px; }
+.eyebrow { margin: 0; font: 600 14px/1 var(--f-display); letter-spacing: .2em; text-transform: uppercase; color: var(--lime); }
+h1 { margin: 0; font: 700 clamp(38px, 7vw, 72px)/.95 var(--f-display); text-transform: uppercase; letter-spacing: .01em; text-wrap: balance; }
+.controls { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-top: 6px; }
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; background: var(--surface); }
+.seg button { font: 600 14px/1 var(--f-body); color: var(--muted); background: none; border: 0; padding: 11px 16px; cursor: pointer; }
+.seg button[aria-pressed="true"] { background: var(--lime); color: var(--lime-ink); }
+.badge { font-size: 13px; color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 5px 12px; }
+
+.stage { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .316fr); gap: 22px; align-items: start; }
+.panel { margin: 0; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.frame { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+.frame.pc { aspect-ratio: 16 / 9; }
+.frame.mob { aspect-ratio: 9 / 16; }
+.frame img { display: block; width: 100%; height: 100%; object-fit: cover; }
+figcaption { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; font-size: 14px; color: var(--muted); }
+figcaption b { color: var(--fg); font: 600 15px/1 var(--f-display); letter-spacing: .14em; text-transform: uppercase; margin-right: 8px; }
+.hint { margin: 4px 0 0; max-width: 68ch; color: var(--muted); font-size: 14px; }
+
+.history h2 { margin: 0 0 16px; font: 700 22px/1 var(--f-display); letter-spacing: .16em; text-transform: uppercase; }
+.history p { margin: 0 0 16px; color: var(--muted); font-size: 14px; }
+#grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 14px; }
+.card { width: 100%; text-align: left; font: inherit; color: inherit; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 8px 8px 12px; cursor: pointer; display: flex; flex-direction: column; gap: 10px; }
+.card[aria-current="true"] { border-color: var(--lime); }
+.thumbs { position: relative; aspect-ratio: 16 / 9; border-radius: 5px; overflow: hidden; background: var(--bg); }
+.thumbs .t-pc { width: 100%; height: 100%; object-fit: cover; display: block; }
+.thumbs .t-mob { position: absolute; right: 6px; bottom: 6px; height: 74%; width: auto; aspect-ratio: 9 / 16; object-fit: cover; border-radius: 4px; border: 1px solid rgba(255, 255, 255, .35); }
+.card .d { font: 600 14px/1 var(--f-display); letter-spacing: .14em; text-transform: uppercase; color: var(--lime); padding-inline: 4px; }
+.card .n { font-size: 14px; padding-inline: 4px; }
+
+@media (max-width: 720px) {
+  .btn { width: 100%; }
+  .stage { grid-template-columns: minmax(0, 1fr); }
+  .panel.mobp { width: min(100%, 300px); }
+  .brand img { height: 38px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .frame img { transition: opacity .25s ease; }
+  .frame img.swap { opacity: 0; }
+}
+
+/* ---------- Onglets ---------- */
+.tabs { position: sticky; top: 0; z-index: 10; display: flex; gap: 4px; background: var(--bg); border-bottom: 1px solid var(--line); margin-block: -12px -12px; padding-top: 6px; }
+.tab { font: 700 20px/1 var(--f-display); letter-spacing: .16em; text-transform: uppercase; color: var(--muted); background: none; border: 0; border-bottom: 3px solid transparent; padding: 14px 18px 12px; cursor: pointer; display: inline-flex; align-items: center; gap: 10px; margin-bottom: -1px; }
+.tab:hover { color: var(--fg); }
+.tab[aria-selected="true"] { color: var(--fg); border-bottom-color: var(--lime); }
+.tab .tag { font: 700 11px/1 var(--f-body); letter-spacing: .08em; background: var(--lime); color: var(--lime-ink); padding: 4px 6px; border-radius: 4px; }
+main[hidden] { display: none; }
+
+/* ---------- Onglet Cartes (tout est limité à .cartes) ---------- */
+.cartes { --metal: #cdd6d1; --gold: #ecc45c; --holo: #bfe9ff; overflow-x: clip; }
+.cartes h1, .cartes h2 { font-family: var(--f-display); font-weight: 700; text-transform: uppercase; line-height: .98; margin: 0; text-wrap: balance; }
+.cartes h1 { font-size: clamp(44px, 8vw, 80px); letter-spacing: .01em; margin: 14px 0 18px; }
+.cartes h1 em { font-style: normal; color: var(--lime); }
+.cartes h2 { font-size: clamp(32px, 5vw, 46px); letter-spacing: .01em; }
+.cartes h3 { font: 600 20px/1.1 var(--f-display); letter-spacing: .05em; text-transform: uppercase; margin: 0; }
+.cartes p { margin: 0; }
+.cartes .lead { color: var(--muted); max-width: 60ch; font-size: 17px; }
+.cartes .note { font-size: 14px; color: var(--muted); }
+.cartes .cta { display: flex; flex-wrap: wrap; gap: 12px; }
+.cartes .btn { cursor: pointer; border: 0; }
+.cartes .btn.line { border: 1px solid var(--lime); }
+.cartes .btn[aria-disabled="true"] { background: var(--surface); color: var(--muted); border: 1px solid var(--line); cursor: not-allowed; filter: none; }
+.cartes section { padding: 52px 0 0; margin-top: 52px; border-top: 1px solid var(--line); scroll-margin-top: 64px; }
+.cartes .chead { display: grid; gap: 12px; margin-bottom: 28px; }
+
+.cartes .hero { display: grid; grid-template-columns: 1.1fr .9fr; gap: 40px; align-items: center; padding-top: 12px; }
+.cartes .chips { display: flex; flex-wrap: wrap; gap: 10px; margin: 22px 0 28px; padding: 0; list-style: none; }
+.cartes .chips li { font: 500 14px/1.2 var(--f-body); border: 1px solid var(--line); background: var(--surface); padding: 8px 12px; border-radius: 6px; }
+.cartes .fan { position: relative; height: min(470px, 92vw); max-width: 420px; margin: 0 auto; width: 100%; }
+.cartes .fan img { position: absolute; top: 0; width: 58%; height: auto; border-radius: 5%; box-shadow: 0 18px 40px rgba(0, 0, 0, .6); transition: transform .35s ease; }
+.cartes .fan img:nth-child(1) { left: 0; transform: rotate(-9deg) translateY(28px); }
+.cartes .fan img:nth-child(2) { left: 21%; z-index: 2; }
+.cartes .fan img:nth-child(3) { right: 0; transform: rotate(9deg) translateY(28px); }
+.cartes .fan:hover img:nth-child(1) { transform: rotate(-12deg) translateY(22px) translateX(-6px); }
+.cartes .fan:hover img:nth-child(3) { transform: rotate(12deg) translateY(22px) translateX(6px); }
+
+.cartes .pcards { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; padding: 0; margin: 0; list-style: none; }
+.cartes .pcard { display: grid; gap: 10px; align-content: start; }
+.cartes .pcard img { width: 100%; height: auto; border-radius: 5%; display: block; transition: transform .25s ease; }
+.cartes .pcard:hover img { transform: translateY(-6px); }
+.cartes .cmeta { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; font: 500 13px/1 var(--f-body); color: var(--muted); }
+.cartes .lv { font: 700 12px/1 var(--f-display); letter-spacing: .1em; text-transform: uppercase; padding: 4px 7px; border-radius: 4px; border: 1px solid currentColor; }
+.cartes .lv1 { color: var(--lime); } .cartes .lv2 { color: var(--metal); } .cartes .lv3 { color: var(--gold); } .cartes .lv4 { color: var(--holo); }
+.cartes .buy { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 32px; }
+.cartes .offer { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 22px; display: grid; gap: 14px; align-content: space-between; }
+.cartes .price { font: 700 44px/1 var(--f-display); letter-spacing: .01em; }
+.cartes .price small { font: 500 14px var(--f-body); color: var(--muted); margin-left: 8px; letter-spacing: 0; }
+
+.cartes .levels { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; padding: 0; margin: 0; list-style: none; }
+.cartes .level { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; display: grid; align-content: start; }
+.cartes .level img { width: 100%; height: auto; display: block; }
+.cartes .level div { padding: 14px 16px 18px; display: grid; gap: 6px; }
+.cartes .pts { font: 700 34px/1 var(--f-display); }
+.cartes .level:nth-child(1) .pts { color: var(--lime); } .cartes .level:nth-child(2) .pts { color: var(--metal); } .cartes .level:nth-child(3) .pts { color: var(--gold); } .cartes .level:nth-child(4) .pts { color: var(--holo); }
+.cartes .level p { font-size: 14px; color: var(--muted); }
+
+.cartes .mystery { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; }
+.cartes table { border-collapse: collapse; width: 100%; font-size: 16px; }
+.cartes th, .cartes td { padding: 10px 12px; text-align: right; border-bottom: 1px solid var(--line); }
+.cartes th:first-child, .cartes td:first-child { text-align: left; }
+.cartes th { font: 600 13px/1 var(--f-display); letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+.cartes td { font-variant-numeric: tabular-nums; font-weight: 500; }
+.cartes .tw { overflow-x: auto; }
+
+.cartes .free { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.cartes .tile { display: grid; gap: 8px; align-content: start; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 20px; text-decoration: none; color: var(--fg); }
+.cartes .tile:hover { border-color: var(--lime); }
+.cartes .tile span { color: var(--muted); font-size: 14px; }
+.cartes .tile[hidden] { display: none; }
+
+.cartes .steps { counter-reset: s; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; padding: 0; margin: 0; list-style: none; }
+.cartes .steps li { counter-increment: s; display: grid; gap: 8px; align-content: start; border-top: 2px solid var(--lime); padding-top: 14px; }
+.cartes .steps li::before { content: counter(s); font: 700 15px/1 var(--f-display); letter-spacing: .1em; color: var(--lime); }
+.cartes .steps p { font-size: 14px; color: var(--muted); }
+
+.cartes .cfoot { margin-top: 52px; border-top: 1px solid var(--line); padding-top: 24px; display: grid; gap: 8px; color: var(--muted); font-size: 13px; }
+.cartes .cfoot strong { font: 700 20px/1 var(--f-display); letter-spacing: .08em; text-transform: uppercase; color: var(--fg); }
+
+@media (max-width: 900px) {
+  .cartes .hero { grid-template-columns: 1fr; }
+  .cartes .pcards { grid-template-columns: repeat(3, 1fr); }
+  .cartes .levels, .cartes .steps { grid-template-columns: repeat(2, 1fr); }
+  .cartes .mystery, .cartes .free { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .tab { font-size: 17px; padding-inline: 12px; letter-spacing: .1em; }
+  .cartes .pcards { grid-template-columns: repeat(2, 1fr); }
+  .cartes .buy, .cartes .steps { grid-template-columns: 1fr; }
+  .cartes .fan { height: min(380px, 100vw); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cartes .fan img, .cartes .pcard img { transition: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="top">
+    <div class="brand"><img src="logo.png" alt="Zlormack Gaming"></div>
+    <div class="actions">
+      <p class="meta" id="count">Un nouveau fond d'écran chaque matin</p>
+      <a class="btn line" id="suggestBtn" href="#" target="_blank" rel="noopener" hidden>Propose un thème</a>
+    </div>
+  </header>
+
+  <div class="tabs" id="tabs" role="tablist" aria-label="Sections du site">
+    <button type="button" class="tab" id="tabWall" role="tab" aria-selected="true" aria-controls="panelWall">Wallpapers</button>
+    <button type="button" class="tab" id="tabCartes" role="tab" aria-selected="false" aria-controls="panelCartes" tabindex="-1">Cartes <span class="tag">Nouveau</span></button>
+  </div>
+
+  <aside class="promo" id="promo" aria-labelledby="promoT">
+    <div class="promo-txt">
+      <p class="eyebrow">Concours de Noël · du 15 au 20 décembre</p>
+      <h2 id="promoT">Gagne une carte rare, un wallpaper exclusif ou une carte à cadre doré</h2>
+      <p>100 % gratuit : aucun achat, aucun paiement. Trois lots numériques, trois gagnants tirés au sort.</p>
+    </div>
+    <a class="btn" id="promoBtn" href="https://gleam.io/GZyye/concours-de-noel-zlormack" target="_blank" rel="noopener">Voir le concours</a>
+  </aside>
+
+  <main id="panelWall" role="tabpanel" aria-labelledby="tabWall">
+    <section class="today" aria-labelledby="themeName">
+      <div class="head">
+        <p class="eyebrow" id="dateLabel">&nbsp;</p>
+        <h1 id="themeName">Chargement</h1>
+        <div class="controls">
+          <div class="seg" role="group" aria-label="Version du wallpaper">
+            <button type="button" id="vSigned" aria-pressed="true">Signé Zlormack</button>
+            <button type="button" id="vClean" aria-pressed="false">Sans texte</button>
+          </div>
+          <span class="badge" id="source" hidden></span>
+        </div>
+      </div>
+      <div class="stage">
+        <figure class="panel">
+          <div class="frame pc"><img id="pcImg" alt="Wallpaper pour ordinateur" width="1920" height="1080"></div>
+          <figcaption><span><b>PC</b>1920 × 1080</span><a id="pcLink" href="#" target="_blank" rel="noopener">Ouvrir en grand</a></figcaption>
+        </figure>
+        <figure class="panel mobp">
+          <div class="frame mob"><img id="mobImg" alt="Wallpaper pour téléphone" width="1080" height="1920"></div>
+          <figcaption><span><b>Mobile</b>1080 × 1920</span><a id="mobLink" href="#" target="_blank" rel="noopener">Ouvrir en grand</a></figcaption>
+        </figure>
+      </div>
+      <p class="hint">Sur ordinateur : clic droit sur l'image, puis « Enregistrer l'image sous ». Sur téléphone : appui long sur l'image, puis « Enregistrer » ou « Ajouter aux photos ».</p>
+    </section>
+
+    <section class="history" aria-labelledby="hTitle" style="margin-top:36px">
+      <h2 id="hTitle">Les 30 derniers jours</h2>
+      <p id="hNote"></p>
+      <ol id="grid"></ol>
+    </section>
+  </main>
+
+  <main class="cartes" id="panelCartes" role="tabpanel" aria-labelledby="tabCartes" hidden>
+    <div class="hero">
+      <div>
+        <p class="eyebrow">Cartes à collectionner · 100 % numériques</p>
+        <h1>Cartes <em>Zlormack</em></h1>
+        <p class="lead">Des scènes d'hiver, de nuit et de silence, en quatre finitions : basique, métal, or et holographique. Chaque carte est numérotée. Aucun objet, aucun envoi postal : tu reçois un lien de téléchargement.</p>
+        <ul class="chips">
+          <li>Un nouveau pack le 9 de chaque mois</li>
+          <li>Édition limitée dès le niveau 2</li>
+          <li>Cartes de niveau 1 gratuites</li>
+        </ul>
+        <div class="cta">
+          <button type="button" class="btn" data-scroll="pack">Voir le pack du mois</button>
+          <button type="button" class="btn line" data-scroll="gratuit">Ce qui est gratuit</button>
+        </div>
+      </div>
+      <div class="fan" aria-hidden="true">
+        <img src="img/foret-de-givre.webp" alt="" width="600" height="840">
+        <img src="img/aurore-sur-le-lac-holo.webp" alt="" width="600" height="840">
+        <img src="img/cabane-sous-la-neige.webp" alt="" width="600" height="840">
+      </div>
+    </div>
+
+    <section id="pack">
+      <div class="chead">
+        <p class="eyebrow">Sortie le 9 décembre 2026</p>
+        <h2>Pack de décembre : Les loups d'hiver</h2>
+        <p class="lead">Cinq scènes d'hiver au vert néon : une carte basique, deux cartes métal, deux cartes or. Le loup change de couleur avec le niveau : blanc, argent, or, et arc-en-ciel pour l'holographique. Les numéros de série se voient en bas à droite de chaque carte.</p>
+      </div>
+      <ul class="pcards">
+        <li class="pcard"><img src="img/lune-de-givre.webp" alt="Carte Lune de givre, niveau 1 : un loup blanc qui hurle vers la pleine lune, au-dessus d'une forêt enneigée" width="600" height="840" loading="lazy">
+          <h3>Lune de givre</h3><div class="cmeta"><span class="lv lv1">Niveau 1</span><span>Illimitée</span></div></li>
+        <li class="pcard"><img src="img/foret-de-givre.webp" alt="Carte Forêt de givre, niveau 2 : un loup argenté au premier plan d'une forêt de sapins sous des rayons de lumière" width="600" height="840" loading="lazy">
+          <h3>Forêt de givre</h3><div class="cmeta"><span class="lv lv2">Niveau 2</span><span>1 à 200</span></div></li>
+        <li class="pcard"><img src="img/traces-dans-la-neige.webp" alt="Carte Traces dans la neige, niveau 2 : des empreintes de pattes qui mènent à un loup argenté qui hurle" width="600" height="840" loading="lazy">
+          <h3>Traces dans la neige</h3><div class="cmeta"><span class="lv lv2">Niveau 2</span><span>1 à 200</span></div></li>
+        <li class="pcard"><img src="img/aurore-sur-le-lac.webp" alt="Carte Aurore sur le lac, niveau 3 : un loup doré qui hurle sur la rive d'un lac gelé, sous une aurore boréale" width="600" height="840" loading="lazy">
+          <h3>Aurore sur le lac</h3><div class="cmeta"><span class="lv lv3">Niveau 3</span><span>1 à 50</span></div></li>
+        <li class="pcard"><img src="img/cabane-sous-la-neige.webp" alt="Carte Cabane sous la neige, niveau 3 : un loup doré devant une cabane à la fenêtre allumée, sous les étoiles" width="600" height="840" loading="lazy">
+          <h3>Cabane sous la neige</h3><div class="cmeta"><span class="lv lv3">Niveau 3</span><span>1 à 50</span></div></li>
+      </ul>
+      <div class="buy">
+        <div class="offer">
+          <div><h3>Le pack complet</h3><p class="note">Les 5 cartes du pack, chacune avec son numéro de série.</p></div>
+          <div class="price">4,50 €<small>5 cartes</small></div>
+          <a class="btn" data-buy="pack5" href="#cartes" aria-disabled="true">Dès le 9 décembre</a>
+        </div>
+        <div class="offer">
+          <div><h3>Deux cartes au choix</h3><p class="note">Tu indiques les deux cartes du pack que tu veux.</p></div>
+          <div class="price">2,50 €<small>2 cartes</small></div>
+          <a class="btn line" data-buy="pack2" href="#cartes" aria-disabled="true">Dès le 9 décembre</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="niveaux">
+      <div class="chead">
+        <p class="eyebrow">Points et niveaux</p>
+        <h2>Chaque carte achetée rapporte 5 points</h2>
+        <p class="lead">Tes points montent ton niveau. À chaque niveau atteint, une récompense t'attend. Le pseudo de ton choix suffit pour suivre tes points.</p>
+      </div>
+      <ul class="levels">
+        <li class="level"><img src="img/lune-de-givre.webp" alt="" width="600" height="840" loading="lazy"><div><span class="pts">0 pt</span><h3>Niveau 1 · Basique</h3><p>Cadre noir et vert, loup blanc. Cartes gratuites, concours ouvert à tous. Palier à 10 points : un wallpaper exclusif.</p></div></li>
+        <li class="level"><img src="img/foret-de-givre.webp" alt="" width="600" height="840" loading="lazy"><div><span class="pts">25 pts</span><h3>Niveau 2 · Métal</h3><p>Cadre en acier brossé, loup argenté. Une carte métal offerte en atteignant le niveau.</p></div></li>
+        <li class="level"><img src="img/aurore-sur-le-lac.webp" alt="" width="600" height="840" loading="lazy"><div><span class="pts">50 pts</span><h3>Niveau 3 · Or</h3><p>Cadre doré, loup doré. Une carte or offerte en atteignant le niveau.</p></div></li>
+        <li class="level"><img src="img/aurore-sur-le-lac-holo.webp" alt="" width="600" height="840" loading="lazy"><div><span class="pts">100 pts</span><h3>Niveau 4 · Holo</h3><p>Cadre holographique, loup arc-en-ciel, 25 exemplaires par carte. Une carte holo offerte en atteignant le niveau.</p></div></li>
+      </ul>
+    </section>
+
+    <section id="mystere">
+      <div class="mystery">
+        <div class="chead" style="margin:0">
+          <p class="eyebrow">Pack mystère</p>
+          <h2>Trois cartes, une surprise</h2>
+          <p class="lead">Un programme tire tes trois cartes au hasard, sans intervention humaine ni IA. Les probabilités sont affichées ci-contre et ne changent pas. La troisième carte est toujours de niveau 2 ou plus. Le pack mystère contient aussi une carte holo qu'on ne trouve pas ailleurs.</p>
+          <div class="price" style="margin:8px 0">3,00 €<small>3 cartes</small></div>
+          <div class="cta"><a class="btn" data-buy="mystery" href="#cartes" aria-disabled="true">Dès le 9 décembre</a></div>
+        </div>
+        <div>
+          <div class="tw"><table>
+            <thead><tr><th>Finition</th><th>Cartes 1 et 2</th><th>Carte 3</th></tr></thead>
+            <tbody>
+              <tr><td>Basique</td><td>60 %</td><td>0 %</td></tr>
+              <tr><td>Métal</td><td>30 %</td><td>75 %</td></tr>
+              <tr><td>Or</td><td>8 %</td><td>20 %</td></tr>
+              <tr><td>Holo</td><td>2 %</td><td>5 %</td></tr>
+            </tbody>
+          </table></div>
+          <p class="note" style="margin-top:14px">Environ 39 packs sur 100 contiennent au moins une carte or ou holo. Une édition épuisée n'est plus tirée. Un pack peut contenir deux fois la même carte, avec deux numéros de série différents.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="gratuit">
+      <div class="chead">
+        <p class="eyebrow">Gratuit</p>
+        <h2>Ce qui reste libre</h2>
+        <p class="lead">Les wallpapers, les cartes de niveau 1 et les concours ne coûtent rien et ne demandent aucun achat.</p>
+      </div>
+      <div class="free">
+        <a class="tile" href="#" data-tab="wallpapers"><h3>Un wallpaper par jour</h3><span>PC et mobile, avec ou sans texte. Tout est dans l'onglet Wallpapers.</span></a>
+        <a class="tile" href="https://gleam.io/GZyye/concours-de-noel-zlormack" target="_blank" rel="noopener"><h3>Concours de Noël</h3><span>Du 15 au 20 décembre. Trois lots numériques, trois gagnants tirés au sort.</span></a>
+        <a class="tile" id="donate" href="#cartes" hidden target="_blank" rel="noopener"><h3>Soutenir la chaîne</h3><span>Un don libre, sans contrepartie obligatoire.</span></a>
+      </div>
+    </section>
+
+    <section id="fonctionnement">
+      <div class="chead"><p class="eyebrow">Comment ça marche</p><h2>De la carte à ton écran en quatre étapes</h2></div>
+      <ol class="steps">
+        <li><h3>Tu choisis</h3><p>Un pack, deux cartes ou un pack mystère.</p></li>
+        <li><h3>Tu paies</h3><p>Sur la page de paiement d'une plateforme externe. Cette page ne reçoit aucun paiement.</p></li>
+        <li><h3>Tu reçois un lien</h3><p>Les cartes numérotées arrivent par un lien de téléchargement envoyé par e-mail. Rien n'est expédié par la poste.</p></li>
+        <li><h3>Tu gagnes des points</h3><p>5 points par carte achetée, sous ton pseudo.</p></li>
+      </ol>
+    </section>
+
+    <footer class="cfoot">
+      <strong>Aucun commentaire.</strong>
+      <p>Chaque carte est une création originale de Zlormack, sans lien avec un jeu ou une marque existante. Usage personnel uniquement : pas de revente ni de réutilisation commerciale.</p>
+      <p>La plateforme de paiement reçoit ton adresse e-mail pour la livraison. Aucune adresse postale n'est demandée. Les mentions légales et les conditions de vente seront ajoutées ici avant l'ouverture des ventes.</p>
+    </footer>
+  </main>
+</div>
+
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var data = null, version = 'Signed', currentDate = null;
+  try { var v = localStorage.getItem('zw-version'); if (v === 'Clean' || v === 'Signed') version = v; } catch (e) {}
+
+  // Bandeau concours : libellé selon la période (Paris), masqué après le 20 décembre 2026.
+  (function () {
+    var now = Date.now();
+    var opens = Date.parse('2026-12-15T00:00:00+01:00'), closes = Date.parse('2026-12-21T00:00:00+01:00');
+    if (now >= closes) { $('promo').hidden = true; }
+    else if (now >= opens) { $('promoBtn').textContent = 'Participer gratuitement'; }
+    else { $('promoBtn').textContent = 'Voir le concours'; }
+  })();
+
+  function fmt(dateStr, opts) {
+    return new Date(dateStr + 'T12:00:00').toLocaleDateString('fr-FR', opts);
+  }
+  function setImg(img, src) {
+    if (img.getAttribute('src') === src) return;
+    img.classList.add('swap');
+    setTimeout(function () { img.src = src; img.classList.remove('swap'); }, 120);
+  }
+  function find(date) {
+    for (var i = 0; i < data.days.length; i++) if (data.days[i].date === date) return data.days[i];
+    return data.days[0];
+  }
+  function render() {
+    var day = find(currentDate);
+    $('dateLabel').textContent = fmt(day.date, { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+    $('themeName').textContent = day.theme;
+    var pc = day.files['pc' + version], mob = day.files['mobile' + version];
+    setImg($('pcImg'), pc); setImg($('mobImg'), mob);
+    $('pcLink').href = pc; $('mobLink').href = mob;
+    var b = $('source'); b.hidden = false;
+    b.textContent = day.source === 'ia' ? 'Fond généré par IA' : 'Fond dessiné par code';
+    $('vSigned').setAttribute('aria-pressed', String(version === 'Signed'));
+    $('vClean').setAttribute('aria-pressed', String(version === 'Clean'));
+    var cards = document.querySelectorAll('.card');
+    for (var i = 0; i < cards.length; i++) {
+      cards[i].setAttribute('aria-current', String(cards[i].getAttribute('data-date') === day.date));
+    }
+    document.title = "Zlormack Gaming : wallpapers gratuits et cartes à collectionner";
+  }
+  function buildGrid() {
+    var ol = $('grid'); ol.textContent = '';
+    data.days.forEach(function (d) {
+      var li = document.createElement('li');
+      var btn = document.createElement('button');
+      btn.type = 'button'; btn.className = 'card'; btn.setAttribute('data-date', d.date);
+      btn.setAttribute('aria-label', fmt(d.date, { day: 'numeric', month: 'long' }) + ', ' + d.theme);
+      var t = document.createElement('div'); t.className = 'thumbs';
+      var a = document.createElement('img'); a.className = 't-pc'; a.loading = 'lazy'; a.alt = ''; a.src = d.files.pcThumb;
+      var m = document.createElement('img'); m.className = 't-mob'; m.loading = 'lazy'; m.alt = ''; m.src = d.files.mobileThumb;
+      t.appendChild(a); t.appendChild(m);
+      var dd = document.createElement('span'); dd.className = 'd'; dd.textContent = fmt(d.date, { weekday: 'short', day: 'numeric', month: 'short' });
+      var nn = document.createElement('span'); nn.className = 'n'; nn.textContent = d.theme;
+      btn.appendChild(t); btn.appendChild(dd); btn.appendChild(nn);
+      btn.addEventListener('click', function () { location.hash = d.date; window.scrollTo({ top: 0, behavior: 'smooth' }); });
+      li.appendChild(btn); ol.appendChild(li);
+    });
+    var n = data.days.length;
+    $('hNote').textContent = n === 1
+      ? 'Le premier jour est en ligne. Un nouveau wallpaper s’ajoute chaque matin et l’historique se remplit ici.'
+      : n + ' wallpapers disponibles. Clique sur un jour pour le voir en grand.';
+    $('count').textContent = n + (n > 1 ? ' jours en ligne' : ' jour en ligne') + ' · un nouveau chaque matin';
+  }
+  function fromHash() {
+    var h = location.hash.replace('#', '');
+    currentDate = /^\d{4}-\d{2}-\d{2}$/.test(h) ? h : data.days[0].date;
+    render();
+  }
+  $('vSigned').addEventListener('click', function () { version = 'Signed'; try { localStorage.setItem('zw-version', version); } catch (e) {} render(); });
+  $('vClean').addEventListener('click', function () { version = 'Clean'; try { localStorage.setItem('zw-version', version); } catch (e) {} render(); });
+
+  // Onglets : #cartes ouvre les cartes, tout le reste (vide ou une date) ouvre les wallpapers.
+  var tabs = { wallpapers: { btn: $('tabWall'), panel: $('panelWall') }, cartes: { btn: $('tabCartes'), panel: $('panelCartes') } };
+  var currentTab = null;
+  function showTab(name) {
+    for (var k in tabs) {
+      var on = k === name;
+      tabs[k].btn.setAttribute('aria-selected', String(on));
+      tabs[k].btn.tabIndex = on ? 0 : -1;
+      tabs[k].panel.hidden = !on;
+    }
+    if (currentTab !== null && currentTab !== name && window.scrollY > 0) window.scrollTo(0, 0);
+    currentTab = name;
+  }
+  function route() {
+    var h = location.hash.replace('#', '');
+    showTab(h === 'cartes' ? 'cartes' : 'wallpapers');
+    if (h !== 'cartes' && data) fromHash();
+  }
+  function goTab(name) {
+    location.hash = name === 'cartes' ? 'cartes' : (currentDate || '');
+    route();
+  }
+  tabs.wallpapers.btn.addEventListener('click', function () { goTab('wallpapers'); });
+  tabs.cartes.btn.addEventListener('click', function () { goTab('cartes'); });
+  $('tabs').addEventListener('keydown', function (e) {
+    if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+    var next = currentTab === 'wallpapers' ? 'cartes' : 'wallpapers';
+    goTab(next); tabs[next].btn.focus(); e.preventDefault();
+  });
+  Array.prototype.forEach.call(document.querySelectorAll('[data-tab]'), function (a) {
+    a.addEventListener('click', function (e) { e.preventDefault(); goTab(a.getAttribute('data-tab')); });
+  });
+  Array.prototype.forEach.call(document.querySelectorAll('[data-scroll]'), function (b) {
+    b.addEventListener('click', function () {
+      var el = $(b.getAttribute('data-scroll'));
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+  window.addEventListener('hashchange', route);
+  route();
+
+  fetch('index.json', { cache: 'no-store' })
+    .then(function (r) { if (!r.ok) throw new Error('index'); return r.json(); })
+    .then(function (j) {
+      if (!j.days || !j.days.length) throw new Error('vide');
+      data = j; buildGrid(); fromHash();
+    })
+    .catch(function () {
+      $('themeName').textContent = 'Pas encore de wallpaper';
+      $('dateLabel').textContent = 'Bientôt';
+      $('hNote').textContent = 'Le premier wallpaper arrive avec la prochaine exécution quotidienne.';
+    });
+})();
+/* Lien du formulaire de suggestions de thèmes : à renseigner quand il existe. Vide, le bouton reste caché. */
+(function () {
+  var SUGGEST_URL = '';
+  var b = document.getElementById('suggestBtn');
+  if (b && SUGGEST_URL) { b.href = SUGGEST_URL; b.hidden = false; }
+})();
+/* Boutique : liens à renseigner quand la page de paiement existe. Un lien vide laisse le bouton désactivé. */
+var SHOP = { pack5: "", pack2: "", mystery: "", donate: "" };
+/* Date de sortie du pack (heure de Paris). Sans lien, le bouton affiche « Dès le 9 décembre » avant cette date, puis « Bientôt disponible ». */
+var SALE_DATE = '2026-12-09';
+(function () {
+  var today = '';
+  try { today = new Date().toLocaleDateString('sv-SE', { timeZone: 'Europe/Paris' }); } catch (e) { today = ''; }
+  Array.prototype.forEach.call(document.querySelectorAll('[data-buy]'), function (a) {
+    var url = SHOP[a.getAttribute('data-buy')];
+    if (url) {
+      a.href = url; a.target = '_blank'; a.rel = 'noopener';
+      a.removeAttribute('aria-disabled'); a.textContent = 'Acheter';
+    } else {
+      a.textContent = (today && today >= SALE_DATE) ? 'Bientôt disponible' : 'Dès le 9 décembre';
+      a.addEventListener('click', function (e) { e.preventDefault(); });
+    }
+  });
+  var d = document.getElementById('donate');
+  if (d && SHOP.donate) { d.href = SHOP.donate; d.hidden = false; }
+})();
+</script>
+</html>

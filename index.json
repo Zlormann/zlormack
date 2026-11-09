@@ -1,0 +1,21 @@
+{
+ "updated": "2026-11-09",
+ "keepDays": 30,
+ "days": [
+  {
+   "date": "2026-11-09",
+   "theme": "Le loup et la lune",
+   "themeId": "loup-lune",
+   "tagline": "PLUS QU'UN JEU, UNE COMMUNAUTÉ",
+   "source": "code",
+   "files": {
+    "pcClean": "wallpapers/2026-11-09/pc-sans-texte.jpg",
+    "pcSigned": "wallpapers/2026-11-09/pc-signe.jpg",
+    "pcThumb": "wallpapers/2026-11-09/pc-vignette.jpg",
+    "mobileClean": "wallpapers/2026-11-09/mobile-sans-texte.jpg",
+    "mobileSigned": "wallpapers/2026-11-09/mobile-signe.jpg",
+    "mobileThumb": "wallpapers/2026-11-09/mobile-vignette.jpg"
+   }
+  }
+ ]
+}
