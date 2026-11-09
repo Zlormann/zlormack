@@ -37,6 +37,8 @@ CARTES_TITLE = "Cartes à collectionner Zlormack : loups, niveaux et packs"
 CARTES_DESC = ("Cartes à collectionner 100 % numériques : loups en 4 finitions (basique, métal, or, holo), numérotées, "
                "une carte gratuite par pack, nouveau pack le 9 du mois.")
 OG_ALT = "Un fond d'écran Zlormack Gaming : ambiance sombre et verte"
+# Vérification de propriété (Google Search Console, Bing) : colle ici la valeur « content » de la balise fournie, puis relance la copie.
+SITE_VERIFICATION = {"google-site-verification": "", "msvalidate.01": ""}
 MONTHS = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"]
 MONTHS_SHORT = ["janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc."]
 WEEKDAYS = ["lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi", "dimanche"]
@@ -255,6 +257,7 @@ def full_document(page, kind="home", index=None):
         '<meta name="twitter:description" content="%s">' % esc(desc),
         '<meta name="twitter:image" content="%sog.jpg">' % BASE_URL,
         ld,
+        ] + ['<meta name="%s" content="%s">' % (k, esc(v)) for k, v in SITE_VERIFICATION.items() if v] + [
         # sans JavaScript, les deux onglets s'affichent l'un sous l'autre (le sélecteur d'onglets est masqué)
         '<noscript><style>#panelWall[hidden],#panelCartes[hidden]{display:block!important}.tabs{display:none!important}</style></noscript>',
     ]
