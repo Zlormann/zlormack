@@ -212,6 +212,53 @@ main[hidden] { display: none; }
 @media (prefers-reduced-motion: reduce) {
   .cartes .fan img, .cartes .pcard img { transition: none; }
 }
+
+/* ---------- Extras du site (hors panneau Cartes) ---------- */
+.controls .btn { width: auto; }
+.controls .btn.line { cursor: pointer; }
+.seg[hidden] { display: none; }
+.seg.nav button:disabled { opacity: .35; cursor: default; }
+.seg.nav button:not(:disabled):hover { color: var(--fg); }
+.sharefb { font: 500 14px/1 var(--f-body); color: var(--fg); background: var(--surface); border: 1px solid var(--lime); border-radius: 6px; padding: 11px 12px; min-width: 0; width: min(100%, 340px); }
+.sharefb[hidden] { display: none; }
+figcaption .lk { display: inline-flex; flex-wrap: wrap; gap: 4px 16px; }
+figcaption .lk [hidden] { display: none; }
+.howto { margin-top: 14px; max-width: 68ch; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 0 16px; }
+.howto summary { cursor: pointer; padding: 14px 0; font: 600 15px/1.2 var(--f-body); list-style-position: inside; }
+.howto summary:hover { color: var(--lime); }
+.howto[open] summary { border-bottom: 1px solid var(--line); margin-bottom: 12px; }
+.howto ul { margin: 0 0 14px; padding-left: 20px; display: grid; gap: 8px; color: var(--muted); font-size: 14px; }
+.howto li b { color: var(--fg); font-weight: 600; }
+.howto p { margin: 0 0 14px; color: var(--muted); font-size: 14px; }
+.sitefoot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 24px; border-top: 1px solid var(--line); padding-top: 20px; color: var(--muted); font-size: 14px; }
+.sitefoot b { font: 700 16px/1 var(--f-display); letter-spacing: .14em; text-transform: uppercase; color: var(--fg); margin-right: 10px; }
+
+.cartes .countdown { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 22px; background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--lime); border-radius: 8px; padding: 14px 18px; margin-bottom: 10px; }
+.cartes .countdown .cd-l { font: 600 14px/1.2 var(--f-display); letter-spacing: .16em; text-transform: uppercase; color: var(--muted); }
+.cartes .countdown b { font: 700 clamp(24px, 4.2vw, 34px)/1 var(--f-display); letter-spacing: .04em; color: var(--lime); font-variant-numeric: tabular-nums; }
+
+.cartes .calc { margin-top: 28px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 22px; display: grid; gap: 14px; max-width: 760px; }
+.cartes .calc label { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; font: 600 15px/1.2 var(--f-body); }
+.cartes .calc output { font: 700 30px/1 var(--f-display); color: var(--lime); font-variant-numeric: tabular-nums; }
+.cartes .calc input[type="range"] { width: 100%; accent-color: var(--lime); margin: 0; }
+.cartes .calc .quick { display: flex; flex-wrap: wrap; gap: 8px; }
+.cartes .calc .quick button { font: 500 13px/1 var(--f-body); color: var(--fg); background: var(--bg); border: 1px solid var(--line); border-radius: 999px; padding: 9px 13px; cursor: pointer; }
+.cartes .calc .quick button:hover, .cartes .calc .quick button[aria-pressed="true"] { border-color: var(--lime); color: var(--lime); }
+.cartes .calc .res { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 16px; }
+.cartes .calc .res strong { font: 700 40px/1 var(--f-display); letter-spacing: .01em; }
+.cartes .calc .res span { font: 600 16px/1.2 var(--f-body); }
+.cartes .calc .bar { height: 8px; border-radius: 99px; background: var(--bg); border: 1px solid var(--line); overflow: hidden; }
+.cartes .calc .bar i { display: block; height: 100%; width: 0; background: var(--lime); }
+.cartes .calc .nx { font-size: 15px; color: var(--fg); }
+.cartes .calc .nx b { font-weight: 600; }
+.cartes .calc .have { font-size: 14px; color: var(--muted); }
+@media (prefers-reduced-motion: no-preference) {
+  .cartes .calc .bar i { transition: width .25s ease; }
+}
+@media (max-width: 560px) {
+  .cartes .calc { padding: 18px 16px; }
+  .cartes .calc .res strong { font-size: 34px; }
+}
 </style>
 </head>
 <body>
@@ -249,20 +296,37 @@ main[hidden] { display: none; }
             <button type="button" id="vSigned" aria-pressed="true">Signé Zlormack</button>
             <button type="button" id="vClean" aria-pressed="false">Sans texte</button>
           </div>
+          <div class="seg nav" role="group" aria-label="Changer de jour">
+            <button type="button" id="olderBtn" disabled>‹ Plus ancien</button>
+            <button type="button" id="newerBtn" disabled>Plus récent ›</button>
+          </div>
+          <button type="button" class="btn line" id="shareBtn">Partager</button>
+          <input type="text" class="sharefb" id="shareFallback" readonly hidden aria-label="Lien à copier">
           <span class="badge" id="source" hidden></span>
         </div>
       </div>
       <div class="stage">
         <figure class="panel">
           <div class="frame pc"><img id="pcImg" alt="Wallpaper pour ordinateur" width="1920" height="1080"></div>
-          <figcaption><span><b>PC</b>1920 × 1080</span><a id="pcLink" href="#" target="_blank" rel="noopener">Ouvrir en grand</a></figcaption>
+          <figcaption><span><b>PC</b>1920 × 1080</span><span class="lk"><a id="pcDl" href="#" download hidden>Télécharger</a><a id="pcLink" href="#" target="_blank" rel="noopener">Ouvrir en grand</a></span></figcaption>
         </figure>
         <figure class="panel mobp">
           <div class="frame mob"><img id="mobImg" alt="Wallpaper pour téléphone" width="1080" height="1920"></div>
-          <figcaption><span><b>Mobile</b>1080 × 1920</span><a id="mobLink" href="#" target="_blank" rel="noopener">Ouvrir en grand</a></figcaption>
+          <figcaption><span><b>Mobile</b>1080 × 1920</span><span class="lk"><a id="mobDl" href="#" download hidden>Télécharger</a><a id="mobLink" href="#" target="_blank" rel="noopener">Ouvrir en grand</a></span></figcaption>
         </figure>
       </div>
       <p class="hint">Sur ordinateur : clic droit sur l'image, puis « Enregistrer l'image sous ». Sur téléphone : appui long sur l'image, puis « Enregistrer » ou « Ajouter aux photos ».</p>
+      <details class="howto">
+        <summary>Comment mettre le fond d'écran ?</summary>
+        <ul>
+          <li><b>Windows</b> : enregistre l'image, clic droit dessus, puis « Définir comme arrière-plan du Bureau ».</li>
+          <li><b>macOS</b> : enregistre l'image, ouvre Réglages Système, puis Fond d'écran, et ajoute l'image enregistrée.</li>
+          <li><b>Linux Mint</b> : clic droit sur le bureau, « Changer l'arrière-plan du bureau », puis le bouton « + » pour ajouter l'image.</li>
+          <li><b>Android</b> : ouvre l'image dans Galerie ou Photos, menu ⋮, puis « Définir comme fond d'écran ».</li>
+          <li><b>iPhone</b> : ouvre l'image dans Photos, bouton de partage, puis « Utiliser comme fond d'écran ».</li>
+        </ul>
+        <p>La version « Sans texte » laisse l'image entière, sans signature. Le fichier PC fait 1920 × 1080, le fichier mobile 1080 × 1920.</p>
+      </details>
     </section>
 
     <section class="history" aria-labelledby="hTitle" style="margin-top:36px">
@@ -435,12 +499,20 @@ main[hidden] { display: none; }
     </footer>
   </main>
 <!--CARTES-PANEL:end-->
+
+  <footer class="sitefoot">
+    <span><b>Aucun commentaire.</b>Gameplay sans commentaire parlé, en mini-films.</span>
+    <a href="https://www.youtube.com/@Zlormack" target="_blank" rel="noopener">Chaîne YouTube Zlormack</a>
+  </footer>
 </div>
 
 <script>
 (function () {
   var $ = function (id) { return document.getElementById(id); };
   var data = null, version = 'Signed', currentDate = null;
+  var PUBLIC_URL = 'https://zlormann.github.io/zlormack/';
+  var topLevel = false;
+  try { topLevel = window.top === window.self; } catch (e) {}
   try { var v = localStorage.getItem('zw-version'); if (v === 'Clean' || v === 'Signed') version = v; } catch (e) {}
 
   // Bandeau concours : libellé selon la période (Paris), masqué après le 20 décembre 2026.
@@ -471,6 +543,14 @@ main[hidden] { display: none; }
     var pc = day.files['pc' + version], mob = day.files['mobile' + version];
     setImg($('pcImg'), pc); setImg($('mobImg'), mob);
     $('pcLink').href = pc; $('mobLink').href = mob;
+    // « Télécharger » : seulement sur le site public (page ouverte seule). Dans la visionneuse Claude, les téléchargements sont bloqués : on garde « Ouvrir en grand ».
+    var sfx = version === 'Signed' ? 'signe' : 'sans-texte';
+    $('pcDl').href = pc; $('pcDl').setAttribute('download', 'zlormack-' + day.date + '-pc-' + sfx + '.jpg'); $('pcDl').hidden = !topLevel;
+    $('mobDl').href = mob; $('mobDl').setAttribute('download', 'zlormack-' + day.date + '-mobile-' + sfx + '.jpg'); $('mobDl').hidden = !topLevel;
+    var pos = data.days.indexOf(day);
+    $('olderBtn').parentNode.hidden = data.days.length < 2;
+    $('olderBtn').disabled = pos >= data.days.length - 1;
+    $('newerBtn').disabled = pos <= 0;
     var b = $('source'); b.hidden = false;
     b.textContent = day.source === 'ia' ? 'Fond généré par IA' : 'Fond dessiné par code';
     $('vSigned').setAttribute('aria-pressed', String(version === 'Signed'));
@@ -509,6 +589,36 @@ main[hidden] { display: none; }
     currentDate = /^\d{4}-\d{2}-\d{2}$/.test(h) ? h : data.days[0].date;
     render();
   }
+  // Jour plus ancien / plus récent (la liste est triée du plus récent au plus ancien).
+  function step(dir) {
+    if (!data) return;
+    var i = data.days.indexOf(find(currentDate)) + dir;
+    if (i >= 0 && i < data.days.length) location.hash = data.days[i].date;
+  }
+  $('olderBtn').addEventListener('click', function () { step(1); });
+  $('newerBtn').addEventListener('click', function () { step(-1); });
+
+  // Partager : feuille de partage du téléphone si elle existe, sinon copie du lien, sinon le lien est affiché pour être copié à la main.
+  function shareDay() {
+    if (!data) return;
+    var day = find(currentDate), url = PUBLIC_URL + '#' + day.date, btn = $('shareBtn');
+    function done(msg) { btn.textContent = msg; setTimeout(function () { btn.textContent = 'Partager'; }, 2400); }
+    function manual() { var i = $('shareFallback'); i.value = url; i.hidden = false; i.focus(); i.select(); done('Copie le lien'); }
+    function copy() {
+      try {
+        if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(url).then(function () { done('Lien copié'); }, manual);
+        else manual();
+      } catch (e) { manual(); }
+    }
+    try {
+      if (navigator.share) {
+        navigator.share({ title: 'Zlormack Gaming', text: day.theme + ' : un fond d’écran gratuit chaque jour', url: url })
+          .catch(function (err) { if (!err || err.name !== 'AbortError') copy(); });
+      } else copy();
+    } catch (e) { copy(); }
+  }
+  $('shareBtn').addEventListener('click', shareDay);
+
   $('vSigned').addEventListener('click', function () { version = 'Signed'; try { localStorage.setItem('zw-version', version); } catch (e) {} render(); });
   $('vClean').addEventListener('click', function () { version = 'Clean'; try { localStorage.setItem('zw-version', version); } catch (e) {} render(); });
 
@@ -590,6 +700,103 @@ var SALE_DATE = '2026-12-09';
   });
   var d = document.getElementById('donate');
   if (d && SHOP.donate) { d.href = SHOP.donate; d.hidden = false; }
+})();
+
+/* Extras de l'onglet Cartes, ajoutés par script APRÈS le panneau : le panneau reste identique avant et après le 9 décembre,
+   donc la révélation (remplacement du bloc CARTES-PANEL) n'a rien à toucher ici. Chaque extra s'éteint seul si son repère est absent. */
+
+/* 1. Compte à rebours jusqu'à l'ouverture de la boutique (9 décembre 2026, 0 h, Paris). Visible tant que les cartes payantes sont cachées. */
+(function () {
+  var panel = document.getElementById('panelCartes');
+  if (!panel) return;
+  var target = Date.parse('2026-12-09T00:00:00+01:00');
+  if (Date.now() >= target && !panel.querySelector('.pcard.locked')) return;
+  var box = document.createElement('div');
+  box.className = 'countdown';
+  var label = document.createElement('span'); label.className = 'cd-l';
+  var time = document.createElement('b'); time.id = 'cdTime';
+  box.appendChild(label); box.appendChild(time);
+  panel.insertBefore(box, panel.firstChild);
+  function pad(n) { return n < 10 ? '0' + n : String(n); }
+  var timer = null;
+  function tick() {
+    var ms = target - Date.now();
+    if (ms <= 0) {
+      label.textContent = 'Les cartes payantes sont dévoilées d’un instant à l’autre';
+      time.textContent = '';
+      if (timer) clearInterval(timer);
+      return;
+    }
+    var s = Math.floor(ms / 1000);
+    label.textContent = 'Ouverture de la boutique · 9 décembre';
+    time.textContent = Math.floor(s / 86400) + ' j ' + pad(Math.floor(s % 86400 / 3600)) + ' h ' + pad(Math.floor(s % 3600 / 60)) + ' min ' + pad(s % 60) + ' s';
+  }
+  tick();
+  timer = setInterval(tick, 1000);
+})();
+
+/* 2. Calculateur de niveau, sous les quatre niveaux. Mêmes règles que le texte de la page : 5 points par carte achetée,
+   palier à 10 points (wallpaper exclusif), niveaux à 25, 50 et 100 points (une carte du niveau offerte). Simple simulation. */
+(function () {
+  var host = document.querySelector('#niveaux .levels');
+  if (!host) return;
+  var STEPS = [
+    { pts: 10, name: 'un wallpaper exclusif' },
+    { pts: 25, name: 'une carte métal offerte' },
+    { pts: 50, name: 'une carte or offerte' },
+    { pts: 100, name: 'une carte holo offerte' }
+  ];
+  var LEVELS = [[0, 'Niveau 1 · Basique'], [25, 'Niveau 2 · Métal'], [50, 'Niveau 3 · Or'], [100, 'Niveau 4 · Holo']];
+  var box = document.createElement('div');
+  box.className = 'calc';
+  box.innerHTML =
+    '<h3>Calcule ton niveau</h3>' +
+    '<label for="calcN">Cartes achetées <output id="calcOut" for="calcN">5</output></label>' +
+    '<input type="range" id="calcN" min="0" max="40" step="1" value="5">' +
+    '<div class="quick" role="group" aria-label="Exemples">' +
+    '<button type="button" data-n="2">2 cartes</button><button type="button" data-n="3">Pack mystère</button>' +
+    '<button type="button" data-n="5">Un pack complet</button><button type="button" data-n="10">Deux packs</button>' +
+    '<button type="button" data-n="20">Quatre packs</button></div>' +
+    '<div class="res" aria-live="polite"><strong id="calcPts"></strong><span id="calcLv"></span></div>' +
+    '<div class="bar" aria-hidden="true"><i id="calcBar"></i></div>' +
+    '<p class="nx" id="calcNext"></p><p class="have" id="calcHave"></p>' +
+    '<p class="note">Simulation indicative. Tes vrais points sont comptés sous ton pseudo.</p>';
+  host.parentNode.insertBefore(box, host.nextSibling);
+  var $c = function (id) { return document.getElementById(id); };
+  var input = $c('calcN');
+  function update() {
+    var n = parseInt(input.value, 10) || 0, pts = n * 5, lv = LEVELS[0][1], i;
+    for (i = 0; i < LEVELS.length; i++) if (pts >= LEVELS[i][0]) lv = LEVELS[i][1];
+    $c('calcOut').textContent = n;
+    $c('calcPts').textContent = pts + (pts > 1 ? ' points' : ' point');
+    $c('calcLv').textContent = lv;
+    var got = [], next = null, prev = 0;
+    for (i = 0; i < STEPS.length; i++) {
+      if (pts >= STEPS[i].pts) { got.push(STEPS[i].name); prev = STEPS[i].pts; }
+      else if (!next) next = STEPS[i];
+    }
+    $c('calcHave').textContent = got.length ? 'Déjà débloqué : ' + got.join(', ') + '.' : 'Rien de débloqué pour l’instant.';
+    var nx = $c('calcNext');
+    if (next) {
+      var missing = (next.pts - pts) / 5;
+      nx.innerHTML = '';
+      nx.appendChild(document.createTextNode('Prochaine récompense : '));
+      var b = document.createElement('b'); b.textContent = next.name + ' à ' + next.pts + ' points'; nx.appendChild(b);
+      nx.appendChild(document.createTextNode('. Il te manque ' + missing + (missing > 1 ? ' cartes.' : ' carte.')));
+      $c('calcBar').style.width = Math.round((pts - prev) / (next.pts - prev) * 100) + '%';
+    } else {
+      nx.textContent = 'Niveau maximum atteint : toutes les récompenses sont débloquées.';
+      $c('calcBar').style.width = '100%';
+    }
+    Array.prototype.forEach.call(box.querySelectorAll('.quick button'), function (q) {
+      q.setAttribute('aria-pressed', String(parseInt(q.getAttribute('data-n'), 10) === n));
+    });
+  }
+  input.addEventListener('input', update);
+  Array.prototype.forEach.call(box.querySelectorAll('.quick button'), function (q) {
+    q.addEventListener('click', function () { input.value = q.getAttribute('data-n'); update(); });
+  });
+  update();
 })();
 </script>
 </html>
