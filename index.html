@@ -154,6 +154,14 @@ main[hidden] { display: none; }
 .cartes .cmeta { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; font: 500 13px/1 var(--f-body); color: var(--muted); }
 .cartes .lv { font: 700 12px/1 var(--f-display); letter-spacing: .1em; text-transform: uppercase; padding: 4px 7px; border-radius: 4px; border: 1px solid currentColor; }
 .cartes .lv1 { color: var(--lime); } .cartes .lv2 { color: var(--metal); } .cartes .lv3 { color: var(--gold); } .cartes .lv4 { color: var(--holo); }
+.cartes .packhead { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 16px; margin: 44px 0 16px; }
+.cartes .chead + .packhead { margin-top: 0; }
+.cartes .packhead h3 { font: 700 24px/1 var(--f-display); letter-spacing: .12em; }
+.cartes .packhead span { color: var(--muted); font-size: 14px; }
+.cartes .packhead + .buy { margin-top: 0; }
+.cartes .pcard .btn { padding: 11px 14px; font-size: 14px; }
+.cartes .pcard.locked img { opacity: .92; }
+.cartes .pcard.locked h3 { color: var(--muted); }
 .cartes .buy { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 32px; }
 .cartes .offer { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 22px; display: grid; gap: 14px; align-content: space-between; }
 .cartes .price { font: 700 44px/1 var(--f-display); letter-spacing: .01em; }
@@ -264,57 +272,97 @@ main[hidden] { display: none; }
     </section>
   </main>
 
+<!--CARTES-PANEL:start-->
+<!--CARTES-ETAT:avant-9-decembre-->
   <main class="cartes" id="panelCartes" role="tabpanel" aria-labelledby="tabCartes" hidden>
     <div class="hero">
       <div>
         <p class="eyebrow">Cartes à collectionner · 100 % numériques</p>
         <h1>Cartes <em>Zlormack</em></h1>
-        <p class="lead">Des scènes d'hiver, de nuit et de silence, en quatre finitions : basique, métal, or et holographique. Chaque carte est numérotée. Aucun objet, aucun envoi postal : tu reçois un lien de téléchargement.</p>
+        <p class="lead">Des loups, de la nuit et du silence, en quatre finitions : basique, métal, or et holographique. Chaque carte est numérotée. Aucun objet, aucun envoi postal. Les deux cartes gratuites de niveau 1 sont à récupérer tout de suite ; les cartes payantes sont dévoilées le 9 décembre, à l'ouverture de la boutique.</p>
         <ul class="chips">
           <li>Un nouveau pack le 9 de chaque mois</li>
           <li>Édition limitée dès le niveau 2</li>
           <li>Cartes de niveau 1 gratuites</li>
         </ul>
         <div class="cta">
-          <button type="button" class="btn" data-scroll="pack">Voir le pack du mois</button>
-          <button type="button" class="btn line" data-scroll="gratuit">Ce qui est gratuit</button>
+          <button type="button" class="btn" data-scroll="pack">Voir les cartes gratuites</button>
+          <button type="button" class="btn line" data-scroll="boutique">Ce qui arrive le 9 décembre</button>
         </div>
       </div>
       <div class="fan" aria-hidden="true">
-        <img src="img/foret-de-givre.webp" alt="" width="600" height="840">
-        <img src="img/aurore-sur-le-lac-holo.webp" alt="" width="600" height="840">
-        <img src="img/cabane-sous-la-neige.webp" alt="" width="600" height="840">
+        <img src="img/lune-de-novembre.webp" alt="" width="600" height="840">
+        <img src="img/dos-niveau4.webp" alt="" width="600" height="840">
+        <img src="img/lune-de-givre.webp" alt="" width="600" height="840">
       </div>
     </div>
 
     <section id="pack">
       <div class="chead">
-        <p class="eyebrow">Sortie le 9 décembre 2026</p>
-        <h2>Pack de décembre : Les loups d'hiver</h2>
-        <p class="lead">Cinq scènes d'hiver au vert néon : une carte basique, deux cartes métal, deux cartes or. Le loup change de couleur avec le niveau : blanc, argent, or, et arc-en-ciel pour l'holographique. Les numéros de série se voient en bas à droite de chaque carte.</p>
+        <p class="eyebrow">Cartes gratuites en ligne · le reste le 9 décembre</p>
+        <h2>Les packs de novembre et de décembre</h2>
+        <p class="lead">Chaque pack compte cinq cartes : une carte basique gratuite, deux cartes métal, deux cartes or. Le loup change de couleur avec le niveau : blanc, argent, or, et arc-en-ciel pour l'holographique. Les cartes payantes restent cachées jusqu'au 9 décembre. Pour garder une carte gratuite : « Ouvrir en HD », puis clic droit (ou appui long sur téléphone) pour enregistrer l'image.</p>
       </div>
+      <div class="packhead"><h3>Novembre · Les loups d'automne</h3><span>Pack du 9 novembre 2026</span></div>
+      <ul class="pcards">
+        <li class="pcard"><img src="img/lune-de-novembre.webp" alt="Carte Lune de novembre, niveau 1 : un loup blanc qui hurle vers une grande lune rousse, au-dessus d'un champ dans la brume" width="600" height="840" loading="lazy">
+          <h3>Lune de novembre</h3><div class="cmeta"><span class="lv lv1">Niveau 1</span><span>Illimitée</span></div>
+          <a class="btn line" href="cartes-gratuites/lune-de-novembre-niveau1.png" target="_blank" rel="noopener">Ouvrir en HD</a></li>
+        <li class="pcard locked"><img src="img/dos-niveau2.webp" alt="Dos d'une carte de niveau 2 (métal), dévoilée le 9 décembre" width="600" height="840" loading="lazy">
+          <h3>Carte métal</h3><div class="cmeta"><span class="lv lv2">Niveau 2</span><span>1 à 200 · dès le 9 déc.</span></div></li>
+        <li class="pcard locked"><img src="img/dos-niveau2.webp" alt="Dos d'une carte de niveau 2 (métal), dévoilée le 9 décembre" width="600" height="840" loading="lazy">
+          <h3>Carte métal</h3><div class="cmeta"><span class="lv lv2">Niveau 2</span><span>1 à 200 · dès le 9 déc.</span></div></li>
+        <li class="pcard locked"><img src="img/dos-niveau3.webp" alt="Dos d'une carte de niveau 3 (or), dévoilée le 9 décembre" width="600" height="840" loading="lazy">
+          <h3>Carte or</h3><div class="cmeta"><span class="lv lv3">Niveau 3</span><span>1 à 50 · dès le 9 déc.</span></div></li>
+        <li class="pcard locked"><img src="img/dos-niveau3.webp" alt="Dos d'une carte de niveau 3 (or), dévoilée le 9 décembre" width="600" height="840" loading="lazy">
+          <h3>Carte or</h3><div class="cmeta"><span class="lv lv3">Niveau 3</span><span>1 à 50 · dès le 9 déc.</span></div></li>
+      </ul>
+      <div class="packhead"><h3>Décembre · Les loups d'hiver</h3><span>Pack du 9 décembre 2026</span></div>
       <ul class="pcards">
         <li class="pcard"><img src="img/lune-de-givre.webp" alt="Carte Lune de givre, niveau 1 : un loup blanc qui hurle vers la pleine lune, au-dessus d'une forêt enneigée" width="600" height="840" loading="lazy">
-          <h3>Lune de givre</h3><div class="cmeta"><span class="lv lv1">Niveau 1</span><span>Illimitée</span></div></li>
-        <li class="pcard"><img src="img/foret-de-givre.webp" alt="Carte Forêt de givre, niveau 2 : un loup argenté au premier plan d'une forêt de sapins sous des rayons de lumière" width="600" height="840" loading="lazy">
-          <h3>Forêt de givre</h3><div class="cmeta"><span class="lv lv2">Niveau 2</span><span>1 à 200</span></div></li>
-        <li class="pcard"><img src="img/traces-dans-la-neige.webp" alt="Carte Traces dans la neige, niveau 2 : des empreintes de pattes qui mènent à un loup argenté qui hurle" width="600" height="840" loading="lazy">
-          <h3>Traces dans la neige</h3><div class="cmeta"><span class="lv lv2">Niveau 2</span><span>1 à 200</span></div></li>
-        <li class="pcard"><img src="img/aurore-sur-le-lac.webp" alt="Carte Aurore sur le lac, niveau 3 : un loup doré qui hurle sur la rive d'un lac gelé, sous une aurore boréale" width="600" height="840" loading="lazy">
-          <h3>Aurore sur le lac</h3><div class="cmeta"><span class="lv lv3">Niveau 3</span><span>1 à 50</span></div></li>
-        <li class="pcard"><img src="img/cabane-sous-la-neige.webp" alt="Carte Cabane sous la neige, niveau 3 : un loup doré devant une cabane à la fenêtre allumée, sous les étoiles" width="600" height="840" loading="lazy">
-          <h3>Cabane sous la neige</h3><div class="cmeta"><span class="lv lv3">Niveau 3</span><span>1 à 50</span></div></li>
+          <h3>Lune de givre</h3><div class="cmeta"><span class="lv lv1">Niveau 1</span><span>Illimitée</span></div>
+          <a class="btn line" href="cartes-gratuites/lune-de-givre-niveau1.png" target="_blank" rel="noopener">Ouvrir en HD</a></li>
+        <li class="pcard locked"><img src="img/dos-niveau2.webp" alt="Dos d'une carte de niveau 2 (métal), dévoilée le 9 décembre" width="600" height="840" loading="lazy">
+          <h3>Carte métal</h3><div class="cmeta"><span class="lv lv2">Niveau 2</span><span>1 à 200 · dès le 9 déc.</span></div></li>
+        <li class="pcard locked"><img src="img/dos-niveau2.webp" alt="Dos d'une carte de niveau 2 (métal), dévoilée le 9 décembre" width="600" height="840" loading="lazy">
+          <h3>Carte métal</h3><div class="cmeta"><span class="lv lv2">Niveau 2</span><span>1 à 200 · dès le 9 déc.</span></div></li>
+        <li class="pcard locked"><img src="img/dos-niveau3.webp" alt="Dos d'une carte de niveau 3 (or), dévoilée le 9 décembre" width="600" height="840" loading="lazy">
+          <h3>Carte or</h3><div class="cmeta"><span class="lv lv3">Niveau 3</span><span>1 à 50 · dès le 9 déc.</span></div></li>
+        <li class="pcard locked"><img src="img/dos-niveau3.webp" alt="Dos d'une carte de niveau 3 (or), dévoilée le 9 décembre" width="600" height="840" loading="lazy">
+          <h3>Carte or</h3><div class="cmeta"><span class="lv lv3">Niveau 3</span><span>1 à 50 · dès le 9 déc.</span></div></li>
       </ul>
+    </section>
+
+    <section id="boutique">
+      <div class="chead">
+        <p class="eyebrow">Boutique · ouverture le 9 décembre</p>
+        <h2>Les prix sont déjà fixés</h2>
+        <p class="lead">Le 9 décembre, les cartes payantes des deux packs sont dévoilées et en vente. Le paiement se fait sur la page d'une plateforme externe. Tu reçois les cartes numérotées par un lien de téléchargement.</p>
+      </div>
+      <div class="packhead"><h3>Pack de novembre</h3></div>
       <div class="buy">
         <div class="offer">
           <div><h3>Le pack complet</h3><p class="note">Les 5 cartes du pack, chacune avec son numéro de série.</p></div>
           <div class="price">4,50 €<small>5 cartes</small></div>
-          <a class="btn" data-buy="pack5" href="#cartes" aria-disabled="true">Dès le 9 décembre</a>
+          <a class="btn" data-buy="nov5" href="#cartes" aria-disabled="true">Dès le 9 décembre</a>
         </div>
         <div class="offer">
           <div><h3>Deux cartes au choix</h3><p class="note">Tu indiques les deux cartes du pack que tu veux.</p></div>
           <div class="price">2,50 €<small>2 cartes</small></div>
-          <a class="btn line" data-buy="pack2" href="#cartes" aria-disabled="true">Dès le 9 décembre</a>
+          <a class="btn line" data-buy="nov2" href="#cartes" aria-disabled="true">Dès le 9 décembre</a>
+        </div>
+      </div>
+      <div class="packhead"><h3>Pack de décembre</h3></div>
+      <div class="buy">
+        <div class="offer">
+          <div><h3>Le pack complet</h3><p class="note">Les 5 cartes du pack, chacune avec son numéro de série.</p></div>
+          <div class="price">4,50 €<small>5 cartes</small></div>
+          <a class="btn" data-buy="dec5" href="#cartes" aria-disabled="true">Dès le 9 décembre</a>
+        </div>
+        <div class="offer">
+          <div><h3>Deux cartes au choix</h3><p class="note">Tu indiques les deux cartes du pack que tu veux.</p></div>
+          <div class="price">2,50 €<small>2 cartes</small></div>
+          <a class="btn line" data-buy="dec2" href="#cartes" aria-disabled="true">Dès le 9 décembre</a>
         </div>
       </div>
     </section>
@@ -326,10 +374,10 @@ main[hidden] { display: none; }
         <p class="lead">Tes points montent ton niveau. À chaque niveau atteint, une récompense t'attend. Le pseudo de ton choix suffit pour suivre tes points.</p>
       </div>
       <ul class="levels">
-        <li class="level"><img src="img/lune-de-givre.webp" alt="" width="600" height="840" loading="lazy"><div><span class="pts">0 pt</span><h3>Niveau 1 · Basique</h3><p>Cadre noir et vert, loup blanc. Cartes gratuites, concours ouvert à tous. Palier à 10 points : un wallpaper exclusif.</p></div></li>
-        <li class="level"><img src="img/foret-de-givre.webp" alt="" width="600" height="840" loading="lazy"><div><span class="pts">25 pts</span><h3>Niveau 2 · Métal</h3><p>Cadre en acier brossé, loup argenté. Une carte métal offerte en atteignant le niveau.</p></div></li>
-        <li class="level"><img src="img/aurore-sur-le-lac.webp" alt="" width="600" height="840" loading="lazy"><div><span class="pts">50 pts</span><h3>Niveau 3 · Or</h3><p>Cadre doré, loup doré. Une carte or offerte en atteignant le niveau.</p></div></li>
-        <li class="level"><img src="img/aurore-sur-le-lac-holo.webp" alt="" width="600" height="840" loading="lazy"><div><span class="pts">100 pts</span><h3>Niveau 4 · Holo</h3><p>Cadre holographique, loup arc-en-ciel, 25 exemplaires par carte. Une carte holo offerte en atteignant le niveau.</p></div></li>
+        <li class="level"><img src="img/lune-de-novembre.webp" alt="" width="600" height="840" loading="lazy"><div><span class="pts">0 pt</span><h3>Niveau 1 · Basique</h3><p>Cadre noir et vert, loup blanc. Cartes gratuites, concours ouvert à tous. Palier à 10 points : un wallpaper exclusif.</p></div></li>
+        <li class="level"><img src="img/dos-niveau2.webp" alt="" width="600" height="840" loading="lazy"><div><span class="pts">25 pts</span><h3>Niveau 2 · Métal</h3><p>Cadre en acier brossé, loup argenté. Une carte métal offerte en atteignant le niveau.</p></div></li>
+        <li class="level"><img src="img/dos-niveau3.webp" alt="" width="600" height="840" loading="lazy"><div><span class="pts">50 pts</span><h3>Niveau 3 · Or</h3><p>Cadre doré, loup doré. Une carte or offerte en atteignant le niveau.</p></div></li>
+        <li class="level"><img src="img/dos-niveau4.webp" alt="" width="600" height="840" loading="lazy"><div><span class="pts">100 pts</span><h3>Niveau 4 · Holo</h3><p>Cadre holographique, loup arc-en-ciel, 25 exemplaires par carte. Une carte holo offerte en atteignant le niveau.</p></div></li>
       </ul>
     </section>
 
@@ -338,7 +386,7 @@ main[hidden] { display: none; }
         <div class="chead" style="margin:0">
           <p class="eyebrow">Pack mystère</p>
           <h2>Trois cartes, une surprise</h2>
-          <p class="lead">Un programme tire tes trois cartes au hasard, sans intervention humaine ni IA. Les probabilités sont affichées ci-contre et ne changent pas. La troisième carte est toujours de niveau 2 ou plus. Le pack mystère contient aussi une carte holo qu'on ne trouve pas ailleurs.</p>
+          <p class="lead">Un programme tire tes trois cartes au hasard, sans intervention humaine ni IA, dans les packs de novembre et de décembre. Les probabilités sont affichées ci-contre et ne changent pas. La troisième carte est toujours de niveau 2 ou plus. Le pack mystère contient aussi une carte holo qu'on ne trouve pas ailleurs.</p>
           <div class="price" style="margin:8px 0">3,00 €<small>3 cartes</small></div>
           <div class="cta"><a class="btn" data-buy="mystery" href="#cartes" aria-disabled="true">Dès le 9 décembre</a></div>
         </div>
@@ -386,6 +434,7 @@ main[hidden] { display: none; }
       <p>La plateforme de paiement reçoit ton adresse e-mail pour la livraison. Aucune adresse postale n'est demandée. Les mentions légales et les conditions de vente seront ajoutées ici avant l'ouverture des ventes.</p>
     </footer>
   </main>
+<!--CARTES-PANEL:end-->
 </div>
 
 <script>
@@ -523,7 +572,7 @@ main[hidden] { display: none; }
   if (b && SUGGEST_URL) { b.href = SUGGEST_URL; b.hidden = false; }
 })();
 /* Boutique : liens à renseigner quand la page de paiement existe. Un lien vide laisse le bouton désactivé. */
-var SHOP = { pack5: "", pack2: "", mystery: "", donate: "" };
+var SHOP = { nov5: "", nov2: "", dec5: "", dec2: "", mystery: "", donate: "" };
 /* Date de sortie du pack (heure de Paris). Sans lien, le bouton affiche « Dès le 9 décembre » avant cette date, puis « Bientôt disponible ». */
 var SALE_DATE = '2026-12-09';
 (function () {

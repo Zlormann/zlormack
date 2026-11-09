@@ -10,10 +10,16 @@ Deux commandes :
 DOSSIER contient les fichiers lus depuis la galerie, avec leur chemin publié
 (page.html.txt, index.json, logo.png, img/..., wallpapers/AAAA-MM-JJ/...).
 
-Sécurité : seuls les fichiers cités par index.json ou par la page sont copiés. Jamais de cartes en haute
-définition ni de lots de concours : ils ne sont pas dans la galerie et ce script ne les connaît pas.
+Sécurité : seuls les fichiers cités par index.json ou par la page sont copiés, et les images de cartes qui ne
+sont plus citées sont supprimées du dépôt. Jamais de cartes payantes en haute définition ni de lots de concours :
+ils ne sont pas dans la galerie et ce script ne les connaît pas.
+
+Embargo : tant que la page porte le repère <!--CARTES-ETAT:avant-9-decembre--> et qu'on est avant le 9 décembre 2026
+(heure de Paris), le script REFUSE de construire le site si la page cite une image de carte autre que les cartes
+gratuites (lune-de-*) et les dos de cartes (dos-niveau*). Il refuse aussi une page déjà « révélée » avant cette date.
 """
 import argparse
+import datetime
 import json
 import os
 import re
@@ -30,6 +36,10 @@ RESET = ("<style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(
          "img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>")
 MAX_BYTES = 5 * 1024 * 1024
 DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
+REVEAL_DATE = "2026-12-09"
+CARD_DIRS = ("img", "cartes-gratuites")
+FREE_OK = re.compile(r"^(img/(lune-de-[a-z0-9-]+|dos-niveau\d)\.webp|cartes-gratuites/lune-de-[a-z0-9-]+-niveau1\.png)$")
+STATE_RE = re.compile(r"<!--CARTES-ETAT:([a-z0-9-]+)-->")
 
 
 def read(path):
@@ -45,8 +55,30 @@ def referenced(index, page):
     files = []
     for d in index.get("days", []):
         files += list((d.get("files") or {}).values())
-    imgs = sorted(set(re.findall(r'(?:src|href)="(img/[^"]+)"', page)))
+    imgs = sorted(set(re.findall(r'(?:src|href)="((?:img|cartes-gratuites)/[^"]+)"', page)))
     return files + imgs + ["logo.png"]
+
+
+def paris_today():
+    try:
+        from zoneinfo import ZoneInfo
+        return datetime.datetime.now(ZoneInfo("Europe/Paris")).date().isoformat()
+    except Exception:
+        return (datetime.datetime.utcnow() + datetime.timedelta(hours=1)).date().isoformat()
+
+
+def check_embargo(page, wanted):
+    """Avant le 9 décembre : aucune carte payante dans le site public. Sort avec une erreur claire sinon."""
+    today = os.environ.get("ZLO_TODAY") or paris_today()
+    m = STATE_RE.search(page)
+    state = m.group(1) if m else ""
+    if today >= REVEAL_DATE:
+        return
+    if state == "apres-9-decembre":
+        sys.exit("embargo : la page est déjà révélée (apres-9-decembre) mais nous sommes le %s : rien n'est publié." % today)
+    for rel in wanted:
+        if rel.split("/")[0] in CARD_DIRS and not FREE_OK.match(rel):
+            sys.exit("embargo : la page cite une carte cachée avant le %s : %s. Rien n'est publié." % (REVEAL_DATE, rel))
 
 
 def load(src):
@@ -121,6 +153,7 @@ def make_extras(repo, latest_pc):
 def cmd_build(a):
     index, page = load(a.src)
     wanted = referenced(index, page)
+    check_embargo(page, wanted)
     for rel in wanted:                       # tout vérifier avant de toucher au dépôt
         if not safe(rel):
             sys.exit("chemin refusé : " + rel)
@@ -145,6 +178,14 @@ def cmd_build(a):
             if DATE_RE.match(d) and d not in keep:
                 shutil.rmtree(os.path.join(wall, d))
                 removed.append("wallpapers/" + d)
+    for d in CARD_DIRS:                      # images de cartes qui ne sont plus citées : retirées du dépôt
+        folder = os.path.join(a.repo, d)
+        if os.path.isdir(folder):
+            for name in sorted(os.listdir(folder)):
+                rel = d + "/" + name
+                if rel not in wanted and os.path.isfile(os.path.join(folder, name)):
+                    os.remove(os.path.join(folder, name))
+                    removed.append(rel)
     days = index.get("days", [])
     latest = None
     if days:
