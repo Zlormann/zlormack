@@ -1,7 +1,22 @@
 {
- "updated": "2026-11-09",
+ "updated": "2026-11-10",
  "keepDays": 30,
  "days": [
+  {
+   "date": "2026-11-10",
+   "theme": "La ville sous la pluie",
+   "themeId": "ville-neon",
+   "tagline": "GOOD GAMES, BETTER DAYS",
+   "source": "code",
+   "files": {
+    "pcClean": "wallpapers/2026-11-10/pc-sans-texte.jpg",
+    "pcSigned": "wallpapers/2026-11-10/pc-signe.jpg",
+    "pcThumb": "wallpapers/2026-11-10/pc-vignette.jpg",
+    "mobileClean": "wallpapers/2026-11-10/mobile-sans-texte.jpg",
+    "mobileSigned": "wallpapers/2026-11-10/mobile-signe.jpg",
+    "mobileThumb": "wallpapers/2026-11-10/mobile-vignette.jpg"
+   }
+  },
   {
    "date": "2026-11-09",
    "theme": "Le loup et la lune",

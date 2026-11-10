@@ -2,7 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://zlormann.github.io/zlormack/</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-10</lastmod>
+    <image:image><image:loc>https://zlormann.github.io/zlormack/wallpapers/2026-11-10/pc-signe.jpg</image:loc></image:image>
+    <image:image><image:loc>https://zlormann.github.io/zlormack/wallpapers/2026-11-10/mobile-signe.jpg</image:loc></image:image>
     <image:image><image:loc>https://zlormann.github.io/zlormack/wallpapers/2026-11-09/pc-signe.jpg</image:loc></image:image>
     <image:image><image:loc>https://zlormann.github.io/zlormack/wallpapers/2026-11-09/mobile-signe.jpg</image:loc></image:image>
   </url>
