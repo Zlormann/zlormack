@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Zlormack Gaming — Wallpapers et cartes gratuites</title>
+    <link>https://zlormann.github.io/zlormack/</link>
+    <description>Les nouvelles créations gratuites Zlormack Gaming : fonds d'écran PC et mobile et cartes numériques.</description>
+    <language>fr-FR</language>
+    <atom:link href="https://zlormann.github.io/zlormack/feed.xml" rel="self" type="application/rss+xml" />
+    <!-- Ajouter un élément item par publication. Exemple à adapter :
+    <item>
+      <title>Wallpaper Zlormack Gaming — Titre de la création</title>
+      <link>https://zlormann.github.io/zlormack/URL-DE-LA-PUBLICATION</link>
+      <guid isPermaLink="true">https://zlormann.github.io/zlormack/URL-DE-LA-PUBLICATION</guid>
+      <description>Wallpaper gratuit Zlormack Gaming pour PC et mobile.</description>
+      <pubDate>Wed, 11 Nov 2026 15:00:00 GMT</pubDate>
+      <category>Wallpapers gratuits</category>
+      <media:content url="https://zlormann.github.io/zlormack/CHEMIN-IMAGE.jpg" medium="image" type="image/jpeg" />
+    </item>
+    -->
+  </channel>
+</rss>
