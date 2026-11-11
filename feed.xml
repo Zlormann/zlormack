@@ -1,21 +1,70 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+<?xml version='1.0' encoding='utf-8'?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0">
   <channel>
     <title>Zlormack Gaming — Wallpapers et cartes gratuites</title>
     <link>https://zlormann.github.io/zlormack/</link>
-    <description>Les nouvelles créations gratuites Zlormack Gaming : fonds d'écran PC et mobile et cartes numériques.</description>
+    <description>Nouveaux wallpapers PC et mobile et cartes gratuites Zlormack Gaming.</description>
     <language>fr-FR</language>
     <atom:link href="https://zlormann.github.io/zlormack/feed.xml" rel="self" type="application/rss+xml" />
-    <!-- Ajouter un élément item par publication. Exemple à adapter :
     <item>
-      <title>Wallpaper Zlormack Gaming — Titre de la création</title>
-      <link>https://zlormann.github.io/zlormack/URL-DE-LA-PUBLICATION</link>
-      <guid isPermaLink="true">https://zlormann.github.io/zlormack/URL-DE-LA-PUBLICATION</guid>
-      <description>Wallpaper gratuit Zlormack Gaming pour PC et mobile.</description>
-      <pubDate>Wed, 11 Nov 2026 15:00:00 GMT</pubDate>
+      <title>Wallpaper PC — La ville sous la pluie (2026-11-10)</title>
+      <link>https://zlormann.github.io/zlormack/wallpapers/2026-11-10/pc-signe.jpg</link>
+      <guid isPermaLink="true">https://zlormann.github.io/zlormack/wallpapers/2026-11-10/pc-signe.jpg</guid>
+      <description>Fond d’écran PC gratuit : La ville sous la pluie. Téléchargement sur Zlormack Gaming.</description>
       <category>Wallpapers gratuits</category>
-      <media:content url="https://zlormann.github.io/zlormack/CHEMIN-IMAGE.jpg" medium="image" type="image/jpeg" />
+      <pubDate>Tue, 10 Nov 2026 12:00:00 GMT</pubDate>
+      <media:content url="https://zlormann.github.io/zlormack/wallpapers/2026-11-10/pc-signe.jpg" medium="image" type="image/jpeg" />
+      <enclosure url="https://zlormann.github.io/zlormack/wallpapers/2026-11-10/pc-signe.jpg" type="image/jpeg" length="0" />
     </item>
-    -->
+    <item>
+      <title>Wallpaper mobile — La ville sous la pluie (2026-11-10)</title>
+      <link>https://zlormann.github.io/zlormack/wallpapers/2026-11-10/mobile-signe.jpg</link>
+      <guid isPermaLink="true">https://zlormann.github.io/zlormack/wallpapers/2026-11-10/mobile-signe.jpg</guid>
+      <description>Fond d’écran mobile gratuit : La ville sous la pluie. Téléchargement sur Zlormack Gaming.</description>
+      <category>Wallpapers gratuits</category>
+      <pubDate>Tue, 10 Nov 2026 12:00:00 GMT</pubDate>
+      <media:content url="https://zlormann.github.io/zlormack/wallpapers/2026-11-10/mobile-signe.jpg" medium="image" type="image/jpeg" />
+      <enclosure url="https://zlormann.github.io/zlormack/wallpapers/2026-11-10/mobile-signe.jpg" type="image/jpeg" length="0" />
+    </item>
+    <item>
+      <title>Wallpaper PC — Le loup et la lune (2026-11-09)</title>
+      <link>https://zlormann.github.io/zlormack/wallpapers/2026-11-09/pc-signe.jpg</link>
+      <guid isPermaLink="true">https://zlormann.github.io/zlormack/wallpapers/2026-11-09/pc-signe.jpg</guid>
+      <description>Fond d’écran PC gratuit : Le loup et la lune. Téléchargement sur Zlormack Gaming.</description>
+      <category>Wallpapers gratuits</category>
+      <pubDate>Mon, 09 Nov 2026 12:00:00 GMT</pubDate>
+      <media:content url="https://zlormann.github.io/zlormack/wallpapers/2026-11-09/pc-signe.jpg" medium="image" type="image/jpeg" />
+      <enclosure url="https://zlormann.github.io/zlormack/wallpapers/2026-11-09/pc-signe.jpg" type="image/jpeg" length="0" />
+    </item>
+    <item>
+      <title>Wallpaper mobile — Le loup et la lune (2026-11-09)</title>
+      <link>https://zlormann.github.io/zlormack/wallpapers/2026-11-09/mobile-signe.jpg</link>
+      <guid isPermaLink="true">https://zlormann.github.io/zlormack/wallpapers/2026-11-09/mobile-signe.jpg</guid>
+      <description>Fond d’écran mobile gratuit : Le loup et la lune. Téléchargement sur Zlormack Gaming.</description>
+      <category>Wallpapers gratuits</category>
+      <pubDate>Mon, 09 Nov 2026 12:00:00 GMT</pubDate>
+      <media:content url="https://zlormann.github.io/zlormack/wallpapers/2026-11-09/mobile-signe.jpg" medium="image" type="image/jpeg" />
+      <enclosure url="https://zlormann.github.io/zlormack/wallpapers/2026-11-09/mobile-signe.jpg" type="image/jpeg" length="0" />
+    </item>
+    <item>
+      <title>Carte gratuite Zlormack — Lune de novembre</title>
+      <link>https://zlormann.github.io/zlormack/cartes-gratuites/lune-de-novembre-niveau1.png</link>
+      <guid isPermaLink="true">https://zlormann.github.io/zlormack/cartes-gratuites/lune-de-novembre-niveau1.png</guid>
+      <description>Carte numérique gratuite de niveau 1 : Lune de novembre.</description>
+      <category>Cartes gratuites</category>
+      <pubDate>Mon, 09 Nov 2026 12:00:00 GMT</pubDate>
+      <media:content url="https://zlormann.github.io/zlormack/cartes-gratuites/lune-de-novembre-niveau1.png" medium="image" type="image/png" />
+      <enclosure url="https://zlormann.github.io/zlormack/cartes-gratuites/lune-de-novembre-niveau1.png" type="image/png" length="0" />
+    </item>
+    <item>
+      <title>Carte gratuite Zlormack — Lune de givre</title>
+      <link>https://zlormann.github.io/zlormack/cartes-gratuites/lune-de-givre-niveau1.png</link>
+      <guid isPermaLink="true">https://zlormann.github.io/zlormack/cartes-gratuites/lune-de-givre-niveau1.png</guid>
+      <description>Carte numérique gratuite de niveau 1 : Lune de givre.</description>
+      <category>Cartes gratuites</category>
+      <pubDate>Mon, 09 Nov 2026 12:00:00 GMT</pubDate>
+      <media:content url="https://zlormann.github.io/zlormack/cartes-gratuites/lune-de-givre-niveau1.png" medium="image" type="image/png" />
+      <enclosure url="https://zlormann.github.io/zlormack/cartes-gratuites/lune-de-givre-niveau1.png" type="image/png" length="0" />
+    </item>
   </channel>
 </rss>
