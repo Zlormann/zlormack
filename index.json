@@ -1,35 +1,20 @@
 {
- "updated": "2026-11-10",
+ "updated": "2026-11-12",
  "keepDays": 30,
  "days": [
   {
-   "date": "2026-11-10",
-   "theme": "La ville sous la pluie",
-   "themeId": "ville-neon",
-   "tagline": "GOOD GAMES, BETTER DAYS",
-   "source": "code",
+   "date": "2026-11-12",
+   "theme": "L'aurore sur le lac",
+   "themeId": "aurore-lac",
+   "tagline": "PLAY · CREATE · PROGRESS · TOGETHER",
+   "source": "ia",
    "files": {
-    "pcClean": "wallpapers/2026-11-10/pc-sans-texte.jpg",
-    "pcSigned": "wallpapers/2026-11-10/pc-signe.jpg",
-    "pcThumb": "wallpapers/2026-11-10/pc-vignette.jpg",
-    "mobileClean": "wallpapers/2026-11-10/mobile-sans-texte.jpg",
-    "mobileSigned": "wallpapers/2026-11-10/mobile-signe.jpg",
-    "mobileThumb": "wallpapers/2026-11-10/mobile-vignette.jpg"
-   }
-  },
-  {
-   "date": "2026-11-09",
-   "theme": "Le loup et la lune",
-   "themeId": "loup-lune",
-   "tagline": "PLUS QU'UN JEU, UNE COMMUNAUTÉ",
-   "source": "code",
-   "files": {
-    "pcClean": "wallpapers/2026-11-09/pc-sans-texte.jpg",
-    "pcSigned": "wallpapers/2026-11-09/pc-signe.jpg",
-    "pcThumb": "wallpapers/2026-11-09/pc-vignette.jpg",
-    "mobileClean": "wallpapers/2026-11-09/mobile-sans-texte.jpg",
-    "mobileSigned": "wallpapers/2026-11-09/mobile-signe.jpg",
-    "mobileThumb": "wallpapers/2026-11-09/mobile-vignette.jpg"
+    "pcClean": "wallpapers/2026-11-12/pc-sans-texte.jpg",
+    "pcSigned": "wallpapers/2026-11-12/pc-signe.jpg",
+    "pcThumb": "wallpapers/2026-11-12/pc-vignette.jpg",
+    "mobileClean": "wallpapers/2026-11-12/mobile-sans-texte.jpg",
+    "mobileSigned": "wallpapers/2026-11-12/mobile-signe.jpg",
+    "mobileThumb": "wallpapers/2026-11-12/mobile-vignette.jpg"
    }
   }
  ]
