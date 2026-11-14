@@ -1,20 +1,20 @@
 {
- "updated": "2026-11-13",
+ "updated": "2026-11-14",
  "keepDays": 30,
  "days": [
   {
-   "date": "2026-11-13",
-   "theme": "La salle d'arcade",
-   "themeId": "salle-retro",
-   "tagline": "TOUJOURS PLUS LOIN",
+   "date": "2026-11-14",
+   "theme": "Le château dans l'orage",
+   "themeId": "chateau-orage",
+   "tagline": "PASSION · GAMEPLAY · COMMUNAUTÉ",
    "source": "ia",
    "files": {
-    "pcClean": "wallpapers/2026-11-13/pc-sans-texte.jpg",
-    "pcSigned": "wallpapers/2026-11-13/pc-signe.jpg",
-    "pcThumb": "wallpapers/2026-11-13/pc-vignette.jpg",
-    "mobileClean": "wallpapers/2026-11-13/mobile-sans-texte.jpg",
-    "mobileSigned": "wallpapers/2026-11-13/mobile-signe.jpg",
-    "mobileThumb": "wallpapers/2026-11-13/mobile-vignette.jpg"
+    "pcClean": "wallpapers/2026-11-14/pc-sans-texte.jpg",
+    "pcSigned": "wallpapers/2026-11-14/pc-signe.jpg",
+    "pcThumb": "wallpapers/2026-11-14/pc-vignette.jpg",
+    "mobileClean": "wallpapers/2026-11-14/mobile-sans-texte.jpg",
+    "mobileSigned": "wallpapers/2026-11-14/mobile-signe.jpg",
+    "mobileThumb": "wallpapers/2026-11-14/mobile-vignette.jpg"
    }
   }
  ]
