@@ -712,23 +712,38 @@ figcaption .lk [hidden] { display: none; }
   var b = document.getElementById('suggestBtn');
   if (b && SUGGEST_URL) { b.href = SUGGEST_URL; b.hidden = false; }
 })();
-/* Boutique : liens à renseigner quand la page de paiement existe. Un lien vide laisse le bouton désactivé. */
-var SHOP = { nov5: "", nov2: "", dec5: "", dec2: "", mystery: "", donate: "" };
-/* Date de sortie du pack (heure de Paris). Sans lien, le bouton affiche « Dès le 9 décembre » avant cette date, puis « Bientôt disponible ». */
-var SALE_DATE = '2026-12-09';
+/* --- BOUTIQUE ET REVELATION DU 9 DECEMBRE --- */
+var SHOP = { 
+  nov5: "https://zlormack.gumroad.com/l/hxidx", // Pack Novembre Complet
+  nov2: "https://zlormack.gumroad.com/l/akedqe", // Pack Novembre Duo
+  dec5: "https://zlormack.gumroad.com/l/absrd", // Pack Décembre Complet
+  dec2: "https://zlormack.gumroad.com/l/frkgh", // Pack Décembre Duo
+  mystery: "", // À remplir plus tard
+  donate: "" 
+};
+
+// Date exacte : 9 décembre 2026 à 00h12 (Heure de Paris)
+var SALE_DATE_MS = Date.parse('2026-12-09T00:12:00+01:00');
+
 (function () {
-  var today = '';
-  try { today = new Date().toLocaleDateString('sv-SE', { timeZone: 'Europe/Paris' }); } catch (e) { today = ''; }
+  var now = Date.now();
   Array.prototype.forEach.call(document.querySelectorAll('[data-buy]'), function (a) {
     var url = SHOP[a.getAttribute('data-buy')];
-    if (url) {
-      a.href = url; a.target = '_blank'; a.rel = 'noopener';
-      a.removeAttribute('aria-disabled'); a.textContent = 'Acheter';
+    
+    // Si la date est passée ET qu'on a un lien, on active le bouton
+    if (now >= SALE_DATE_MS && url) {
+      a.href = url; 
+      a.target = '_blank'; 
+      a.rel = 'noopener';
+      a.removeAttribute('aria-disabled'); 
+      a.textContent = 'Acheter';
     } else {
-      a.textContent = (today && today >= SALE_DATE) ? 'Bientôt disponible' : 'Dès le 9 décembre';
+      // Sinon (avant le 9 déc à 00h12), on garde le bouton grisé
+      a.textContent = (now >= SALE_DATE_MS) ? 'Bientôt disponible' : 'Dès le 9 décembre';
       a.addEventListener('click', function (e) { e.preventDefault(); });
     }
   });
+  
   var d = document.getElementById('donate');
   if (d && SHOP.donate) { d.href = SHOP.donate; d.hidden = false; }
 })();
@@ -740,7 +755,7 @@ var SALE_DATE = '2026-12-09';
 (function () {
   var panel = document.getElementById('panelCartes');
   if (!panel) return;
-  var target = Date.parse('2026-12-09T00:00:00+01:00');
+  var target = Date.parse('2026-12-09T00:12:00+01:00');
   if (Date.now() >= target && !panel.querySelector('.pcard.locked')) return;
   var box = document.createElement('div');
   box.className = 'countdown';
