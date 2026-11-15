@@ -274,6 +274,131 @@ figcaption .lk [hidden] { display: none; }
   .cartes .calc .res strong { font-size: 34px; }
 }
 </style>
+
+<style>
+.desactive {
+    background-color: #333 !important;
+    color: #888 !important;
+    cursor: not-allowed;
+    pointer-events: none;
+    border: 1px solid #555;
+}
+.actif {
+    background-color: #7CFF00 !important;
+    color: #000 !important;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 0 15px #7CFF00;
+    pointer-events: auto;
+}
+</style>
+
+
+<style>
+/* ==========================================
+   DA "GAMING PREMIUM" - FUSION NÉON & OR
+   ========================================== */
+
+/* 1. Fond général très sombre */
+:root {
+    --bg: #050505 !important; 
+    --fg: #e0e0e0 !important;
+    --lime: #7CFF00 !important;
+    --gold: #D4AF37 !important;
+}
+
+/* 2. Titres et typographie */
+h1, h2, h3, .logo {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 900 !important;
+}
+h1, h2 {
+    text-shadow: 0 0 10px rgba(124, 255, 0, 0.2);
+}
+
+/* 3. Les blocs d'offres (Cartes) */
+.offer, .card, .boxes > div {
+    background: linear-gradient(145deg, #111111, #080808) !important;
+    border: 1px solid #222 !important;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+/* Ligne dorée subtile en haut des blocs */
+.offer::before, .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    opacity: 0.5;
+}
+
+.offer:hover, .card:hover {
+    transform: translateY(-5px);
+    border-color: var(--lime) !important;
+    box-shadow: 0 15px 40px rgba(124, 255, 0, 0.15);
+}
+
+/* 4. Boutons */
+.btn {
+    background: #111 !important;
+    color: var(--lime) !important;
+    border: 1px solid var(--lime) !important;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background: var(--lime) !important;
+    color: #000 !important;
+    box-shadow: 0 0 20px var(--lime) !important;
+}
+
+/* 5. Boutons désactivés (avant le 9 décembre) */
+.desactive {
+    background: #1a1a1a !important;
+    color: #555 !important;
+    border: 1px solid #333 !important;
+    box-shadow: none !important;
+}
+
+.desactive::after {
+    content: " 🔒";
+    font-size: 0.8em;
+}
+
+/* 6. Boutons actifs (après le 9 décembre) */
+.actif {
+    background: var(--lime) !important;
+    color: #000 !important;
+    border: 1px solid var(--lime) !important;
+    box-shadow: 0 0 15px var(--lime) !important;
+}
+</style>
+
+
+<style>
+a[aria-disabled="true"] {
+    background-color: #333 !important;
+    color: #888 !important;
+    cursor: not-allowed;
+    pointer-events: none;
+    border: 1px solid #555;
+}
+a[aria-disabled="true"]::after {
+    content: " 🔒";
+    font-size: 0.8em;
+}
+</style>
+
 </head>
 <body>
 
