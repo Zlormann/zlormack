@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zlormack Gaming - Boutique Officielle</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .font-gaming { font-family: 'Anton', sans-serif; text-transform: uppercase; letter-spacing: 2px; }
+        .neon-glow { box-shadow: 0 0 20px rgba(124, 255, 0, 0.4); }
+        .neon-glow:hover { box-shadow: 0 0 30px rgba(124, 255, 0, 0.8); }
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(124, 255, 0, 0.05) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(124, 255, 0, 0.05) 1px, transparent 1px);
+        }
+    </style>
+</head>
+<body class="bg-[#050505] text-gray-300 min-h-screen bg-grid selection:bg-[#7CFF00] selection:text-black">
+
+    <!-- En-tête / Logo -->
+    <header class="w-full py-8 text-center border-b border-gray-800 bg-black/50 backdrop-blur-md">
+        <h1 class="text-white font-gaming text-4xl md:text-6xl mb-2">
+            ZLOR<span class="text-[#7CFF00]">MACK</span> GAMING
+        </h1>
+        <p class="text-gray-400 text-lg">Plus qu'un jeu, une communauté.</p>
+    </header>
+
+    <!-- Contenu Principal (Bannière de bienvenue) -->
+    <main class="max-w-5xl mx-auto px-6 py-16 text-center">
+        
+        <h2 class="text-3xl md:text-4xl text-white font-gaming mb-6">
+            Découvrez l'univers des loups
+        </h2>
+        
+        <p class="text-xl text-gray-400 max-w-3xl mx-auto mb-12">
+            Bienvenue dans la boutique officielle Zlormack Gaming. Plongez dans un univers de fantasy cinématique où se mêlent loups majestueux, gaming et cartes à collectionner numériques exclusives.
+        </p>
+
+        <!-- Section Email (Demandée par le prompt Gumroad) -->
+        <div class="max-w-md mx-auto bg-gray-900 border border-gray-800 rounded-xl p-8 shadow-2xl relative overflow-hidden mb-16">
+            <div class="absolute -top-10 -right-10 w-32 h-32 bg-[#7CFF00] blur-[80px] opacity-20 pointer-events-none"></div>
+            
+            <h3 class="text-xl text-white font-bold mb-4">Rejoignez la meute</h3>
+            <p class="text-sm text-gray-400 mb-6">Soyez informé des nouveaux packs de cartes et des wallpapers exclusifs.</p>
+            
+            <form data-gumroad-follow class="flex flex-col gap-3">
+                <input type="email" name="email" required placeholder="Votre adresse email" class="w-full bg-black border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[#7CFF00]">
+                <button type="submit" class="w-full bg-[#7CFF00] hover:bg-[#6ee600] text-black font-bold py-3 rounded-lg transition-all neon-glow">
+                    S'abonner
+                </button>
+                <p data-gumroad-follow-message class="text-sm text-center text-gray-400 mt-2"></p>
+            </form>
+        </div>
+
+        <!-- Liens de redirection (Pour faire le pont avec ton site) -->
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="https://zlormann.github.io/zlormack/" target="_blank" class="bg-gray-800 hover:bg-gray-700 text-white px-6 py-3 rounded-lg font-bold transition-colors">
+                Visiter le site officiel
+            </a>
+            <a href="https://discord.com/invite/F3vUgGazyG" target="_blank" class="bg-[#5865F2] hover:bg-[#4752c4] text-white px-6 py-3 rounded-lg font-bold transition-colors">
+                Rejoindre le Discord
+            </a>
+        </div>
+
+    </main>
+
+    <!-- Note : Les produits de ta boutique s'afficheront automatiquement en dessous de cette bannière par Gumroad -->
+
+</body>
+</html>
