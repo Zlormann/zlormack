@@ -272,6 +272,52 @@ figcaption .lk [hidden] { display: none; }
 @media (max-width: 560px) {
   .cartes .calc { padding: 18px 16px; }
   .cartes .calc .res strong { font-size: 34px; }
+}.sitefoot {
+    background-color: #050505;
+    border-top: 1px solid #1a1a1a;
+    padding: 30px 20px;
+    margin-top: 50px;
+}
+.footer-content {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    text-align: center;
+}
+.footer-brand {
+    color: #888;
+    font-size: 0.9rem;
+}
+.fnav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+.fnav a {
+    color: #ccc;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+.fnav a:hover {
+    color: #7CFF00;
+    background-color: rgba(124, 255, 0, 0.1);
+    text-shadow: 0 0 10px rgba(124, 255, 0, 0.5);
+}
+.lien-boutique {
+    color: #D4AF37 !important;
+}
+.lien-discord {
+    color: #5865F2 !important;
 }
 </style>
 
@@ -645,25 +691,21 @@ a[aria-disabled="true"]::after {
   </main>
 <!--CARTES-PANEL:end-->
 
-  <footer class="sitefoot">
-    <span><b>Aucun commentaire.</b>Gameplay sans commentaire parlé, en mini-films.</span>
-    <nav class="fnav" aria-label="Liens du site">
-      <a href="https://zlormann.github.io/zlormack/" data-tab="wallpapers">Wallpapers du jour</a>
-      <a href="https://zlormann.github.io/zlormack/cartes/" data-tab="cartes">Cartes à collectionner</a>
-      <a href="https://www.youtube.com/@Zlormack" target="_blank" rel="noopener">Chaîne YouTube Zlormack</a>
-      <a href="https://zlormack-game-enjoy.blogspot.com/" target="_blank" rel="noopener">Blog Zlormack Game Enjoy</a>
-    </nav>
+    <footer class="sitefoot">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <span><b>ZLORMACK GAMING.</b> Gameplay sans commentaire parlé, en mini-films.</span>
+      </div>
+      <nav class="fnav" aria-label="Liens du site">
+        <a href="https://zlormann.github.io/zlormack/" data-tab="wallpapers">Wallpapers</a>
+        <a href="https://zlormann.github.io/zlormack/cartes/" data-tab="cartes">Cartes</a>
+        <a href="https://zlormack.gumroad.com" target="_blank" rel="noopener" class="lien-boutique">Boutique</a>
+        <a href="https://www.youtube.com/@Zlormack" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://zlormack-game-enjoy.blogspot.com/" target="_blank" rel="noopener">Blog</a>
+        <a href="https://discord.gg/rwqFUEuAj9" target="_blank" rel="noopener" class="lien-discord">Discord</a>
+      </nav>
+    </div>
   </footer>
-</div>
-
-<script>
-(function () {
-  var $ = function (id) { return document.getElementById(id); };
-  var data = null, version = 'Signed', currentDate = null;
-  var PUBLIC_URL = 'https://zlormann.github.io/zlormack/';
-  var topLevel = false;
-  try { topLevel = window.top === window.self; } catch (e) {}
-  try { var v = localStorage.getItem('zw-version'); if (v === 'Clean' || v === 'Signed') version = v; } catch (e) {}
 
   // Bandeau concours : libellé selon la période (Paris), masqué après le 20 décembre 2026.
   (function () {
