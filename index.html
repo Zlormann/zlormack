@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -267,43 +268,37 @@
 
     </div>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-        <h3>🐺 ZLORMACK GAMING</h3>
-        <p>Plus qu'un jeu, une communauté.</p>
-        <div class="footer-links">
-            <a href="https://zlormann.github.io/zlormack/">Wallpapers</a>
-            <a href="https://ko-fi.com/zlormackgaming" target="_blank" style="color: var(--kofi);">Ko-fi</a>
-            <a href="https://www.youtube.com/@Zlormack" target="_blank">YouTube</a>
-            <a href="https://discord.com/invite/F3vUgGazyG" target="_blank">Discord</a>
-            <a href="https://zlormack-game-enjoy.blogspot.com/" target="_blank">Blog</a>
-        </div>
+  <div class="footer-links">
+    <a href="https://zlormann.github.io/zlormack/" title="Galerie / Wallpapers"><i class="fa-solid fa-desktop"></i></a>
+    <a href="https://ko-fi.com/zlormackgaming" target="_blank" title="Soutenir sur Ko-fi"><i class="fa-solid fa-mug-hot"></i></a>
+    <a href="https://www.instagram.com/zlormacky/" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+    <a href="https://www.youtube.com/@Zlormack" target="_blank" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+    <a href="https://discord.com/invite/F3vUgGazyG" target="_blank" title="Rejoindre le Discord"><i class="fa-brands fa-discord"></i></a>
+    <a href="https://zlormack-game-enjoy.blogspot.com/" target="_blank" title="Le Blog"><i class="fa-solid fa-blog"></i></a>
+</div>
         <p style="margin-top: 20px; font-size: 0.75rem; color: #555;">© 2026 Zlormack Gaming. Tous droits réservés.</p>
     </footer>
 
-    <!-- SCRIPT COMPTE A REBOURS -->
-    <script>
-        var countDownDate = new Date("Dec 09, 2026 00:12:00").getTime();
-        var x = setInterval(function() {
-            var now = new Date().getTime();
-            var distance = countDownDate - now;
-            
-            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-            
-            var timerElement = document.getElementById("countdown-timer");
-            if(timerElement) {
-                if (distance < 0) {
-                    clearInterval(x);
-                    timerElement.innerHTML = "OUVERT !";
-                } else {
-                    timerElement.innerHTML = days + "j " + hours + "h " + minutes + "m " + seconds + "s";
-                }
-            }
-        }, 1000);
-    </script>
+    /* --- STYLE DU FOOTER DYNAMIQUE --- */
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 25px; /* Espace entre les icônes */
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
 
+.footer-links a {
+    color: #a0a0a0; /* Couleur grise par défaut */
+    font-size: 28px; /* Taille des icônes */
+    transition: all 0.3s ease-in-out; /* Animation fluide */
+}
+
+/* L'effet magique au survol de la souris */
+.footer-links a:hover {
+    color: #39FF14; /* Le vert néon Zlormack */
+    transform: translateY(-5px); /* L'icône monte légèrement */
+    text-shadow: 0 0 15px #39FF14, 0 0 25px #39FF14; /* Effet de halo lumineux */
+}
 </body>
 </html>
