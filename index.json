@@ -1,20 +1,20 @@
 {
- "updated": "2026-11-16",
+ "updated": "2026-11-17",
  "keepDays": 30,
  "days": [
   {
-   "date": "2026-11-16",
-   "theme": "Le loup et la lune",
-   "themeId": "loup-lune",
-   "tagline": "PLUS QU'UN JEU, UNE COMMUNAUTÉ",
+   "date": "2026-11-17",
+   "theme": "La ville sous la pluie",
+   "themeId": "ville-neon",
+   "tagline": "GOOD GAMES, BETTER DAYS",
    "source": "ia",
    "files": {
-    "pcClean": "wallpapers/2026-11-16/pc-sans-texte.jpg",
-    "pcSigned": "wallpapers/2026-11-16/pc-signe.jpg",
-    "pcThumb": "wallpapers/2026-11-16/pc-vignette.jpg",
-    "mobileClean": "wallpapers/2026-11-16/mobile-sans-texte.jpg",
-    "mobileSigned": "wallpapers/2026-11-16/mobile-signe.jpg",
-    "mobileThumb": "wallpapers/2026-11-16/mobile-vignette.jpg"
+    "pcClean": "wallpapers/2026-11-17/pc-sans-texte.jpg",
+    "pcSigned": "wallpapers/2026-11-17/pc-signe.jpg",
+    "pcThumb": "wallpapers/2026-11-17/pc-vignette.jpg",
+    "mobileClean": "wallpapers/2026-11-17/mobile-sans-texte.jpg",
+    "mobileSigned": "wallpapers/2026-11-17/mobile-signe.jpg",
+    "mobileThumb": "wallpapers/2026-11-17/mobile-vignette.jpg"
    }
   }
  ]
