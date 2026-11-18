@@ -1,20 +1,20 @@
 {
- "updated": "2026-11-17",
+ "updated": "2026-11-18",
  "keepDays": 30,
  "days": [
   {
-   "date": "2026-11-17",
-   "theme": "La ville sous la pluie",
-   "themeId": "ville-neon",
-   "tagline": "GOOD GAMES, BETTER DAYS",
+   "date": "2026-11-18",
+   "theme": "La forêt de brume",
+   "themeId": "foret-brume",
+   "tagline": "SAME GAME, DIFFERENT LEVEL",
    "source": "ia",
    "files": {
-    "pcClean": "wallpapers/2026-11-17/pc-sans-texte.jpg",
-    "pcSigned": "wallpapers/2026-11-17/pc-signe.jpg",
-    "pcThumb": "wallpapers/2026-11-17/pc-vignette.jpg",
-    "mobileClean": "wallpapers/2026-11-17/mobile-sans-texte.jpg",
-    "mobileSigned": "wallpapers/2026-11-17/mobile-signe.jpg",
-    "mobileThumb": "wallpapers/2026-11-17/mobile-vignette.jpg"
+    "pcClean": "wallpapers/2026-11-18/pc-sans-texte.jpg",
+    "pcSigned": "wallpapers/2026-11-18/pc-signe.jpg",
+    "pcThumb": "wallpapers/2026-11-18/pc-vignette.jpg",
+    "mobileClean": "wallpapers/2026-11-18/mobile-sans-texte.jpg",
+    "mobileSigned": "wallpapers/2026-11-18/mobile-signe.jpg",
+    "mobileThumb": "wallpapers/2026-11-18/mobile-vignette.jpg"
    }
   }
  ]
