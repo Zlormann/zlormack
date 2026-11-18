@@ -1,357 +1,895 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta name="description" content="Découvrez Zlormack Gaming : fonds d’écran gratuits pour PC et mobile, cartes numériques collector et actualités de la Meute.">
+    <link rel="canonical" href="https://zlormann.github.io/zlormack/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Zlormack Gaming">
+    <meta property="og:title" content="Zlormack Gaming | Wallpapers gratuits PC &amp; mobile et cartes collector">
+    <meta property="og:description" content="Découvrez Zlormack Gaming : fonds d’écran gratuits pour PC et mobile, cartes numériques collector et actualités de la Meute.">
+    <meta property="og:url" content="https://zlormann.github.io/zlormack/">
+    <meta name="twitter:card" content="summary">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Zlormack Gaming - Wallpapers et Cartes Collector</title>
     <style>
-        :root {
-            --bg: #050505;
-            --fg: #e0e0e0;
-            --neon: #7CFF00;
-            --dark-grey: #0a0a0a;
-            --border: #1a1a1a;
-            --gold: #D4AF37;
-            --kofi: #FF5E5B;
-        }
+      :root {
+        --bg: #050505;
+        --fg: #e0e0e0;
+        --neon: #7cff00;
+        --dark-grey: #0a0a0a;
+        --border: #1a1a1a;
+        --gold: #d4af37;
+        --kofi: #ff5e5b;
+      }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
 
-        body {
-            background-color: var(--bg);
-            color: var(--fg);
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
+      body {
+        background-color: var(--bg);
+        color: var(--fg);
+        font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
 
-        a { color: var(--neon); text-decoration: none; transition: all 0.3s ease; }
-        a:hover { text-shadow: 0 0 10px rgba(124, 255, 0, 0.6); }
+      a {
+        color: var(--neon);
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+      a:hover {
+        text-shadow: 0 0 10px rgba(124, 255, 0, 0.6);
+      }
 
-        /* --- HEADER --- */
-        .header {
-            background-color: #000;
-            border-bottom: 2px solid var(--neon);
-            padding: 20px 0;
-            text-align: center;
-            box-shadow: 0 4px 20px rgba(124, 255, 0, 0.1);
-        }
-        .header h1 a {
-            color: #fff;
-            font-family: 'Impact', 'Arial Black', sans-serif;
-            font-size: 2.5rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-        .header h1 a span { color: var(--neon); }
-        .header p { color: #888; font-size: 0.9rem; margin-top: 5px; letter-spacing: 1px;}
+      /* --- HEADER --- */
+      .header {
+        background-color: #000;
+        border-bottom: 2px solid var(--neon);
+        padding: 20px 0;
+        text-align: center;
+        box-shadow: 0 4px 20px rgba(124, 255, 0, 0.1);
+      }
+      .header h1 a {
+        color: #fff;
+        font-family: "Impact", "Arial Black", sans-serif;
+        font-size: 2.5rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+      .header h1 a span {
+        color: var(--neon);
+      }
+      .header p {
+        color: #888;
+        font-size: 0.9rem;
+        margin-top: 5px;
+        letter-spacing: 1px;
+      }
 
-        /* --- LAYOUT --- */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+      /* --- LAYOUT --- */
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
 
-        /* --- SECTIONS --- */
-        .section { padding: 60px 0; border-bottom: 1px solid var(--border); }
-        .section-title {
-            font-family: 'Impact', sans-serif;
-            font-size: 2.5rem;
-            color: #fff;
-            text-transform: uppercase;
-            margin-bottom: 10px;
-            text-align: center;
-        }
-        .section-desc { text-align: center; color: #888; margin-bottom: 40px; }
+      /* --- SECTIONS --- */
+      .section {
+        padding: 60px 0;
+        border-bottom: 1px solid var(--border);
+      }
+      .section-title {
+        font-family: "Impact", sans-serif;
+        font-size: 2.5rem;
+        color: #fff;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        text-align: center;
+      }
+      .section-desc {
+        text-align: center;
+        color: #888;
+        margin-bottom: 40px;
+      }
 
-        /* --- WALLPAPERS --- */
+      /* --- WALLPAPERS --- */
+      .wallpaper-display {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+      .wallpaper-item {
+        background: var(--dark-grey);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 15px;
+        text-align: center;
+        transition: transform 0.3s ease;
+      }
+      .wallpaper-item:hover {
+        transform: translateY(-5px);
+        border-color: var(--neon);
+      }
+      .wallpaper-item img {
+        max-width: 100%;
+        border-radius: 4px;
+      }
+      .wallpaper-item .btn {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 8px 16px;
+        background: var(--neon);
+        color: #000;
+        font-weight: bold;
+        border-radius: 4px;
+      }
+
+      /* --- CARTES & COUNTDOWN --- */
+      .countdown-container {
+        background: #000;
+        border: 1px solid var(--neon);
+        border-radius: 8px;
+        padding: 30px;
+        text-align: center;
+        max-width: 600px;
+        margin: 0 auto 50px;
+        box-shadow: 0 0 30px rgba(124, 255, 0, 0.15);
+      }
+      .countdown-title {
+        font-size: 1.2rem;
+        color: #fff;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+      .countdown-timer {
+        font-family: "Impact", sans-serif;
+        font-size: 3rem;
+        color: var(--neon);
+        letter-spacing: 3px;
+        text-shadow: 0 0 20px rgba(124, 255, 0, 0.4);
+      }
+
+      .cards-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        margin-bottom: 50px;
+      }
+      .card-preview {
+        background: var(--dark-grey);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 20px;
+        text-align: center;
+        transition:
+          transform 0.3s ease,
+          border-color 0.3s ease;
+      }
+      .card-preview:hover {
+        transform: translateY(-8px);
+        border-color: var(--neon);
+        box-shadow: 0 10px 30px rgba(124, 255, 0, 0.1);
+      }
+      .card-preview img {
+        width: 100%;
+        max-width: 200px;
+        border-radius: 8px;
+        margin-bottom: 15px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+      }
+      .card-preview h3 {
+        color: #fff;
+        font-family: "Impact", sans-serif;
+        font-size: 1.5rem;
+        letter-spacing: 1px;
+      }
+      .card-preview p {
+        color: var(--neon);
+        font-weight: bold;
+        font-size: 0.9rem;
+        margin-top: 5px;
+      }
+
+      /* --- KOFI BANNER --- */
+      .kofi-banner {
+        background: linear-gradient(145deg, #111, #080808);
+        border: 2px solid var(--kofi);
+        border-radius: 12px;
+        padding: 40px;
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto;
+        position: relative;
+        overflow: hidden;
+      }
+      .kofi-banner::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: var(--kofi);
+      }
+      .kofi-banner h2 {
+        color: #fff;
+        font-family: "Impact", sans-serif;
+        font-size: 2rem;
+        margin-bottom: 10px;
+      }
+      .kofi-banner p {
+        color: #ccc;
+        margin-bottom: 25px;
+        font-size: 1.1rem;
+      }
+      .kofi-btn {
+        display: inline-block;
+        background-color: var(--kofi);
+        color: #fff !important;
+        font-weight: bold;
+        font-size: 1.2rem;
+        padding: 15px 40px;
+        border-radius: 50px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        box-shadow: 0 10px 20px rgba(255, 94, 91, 0.3);
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s;
+      }
+      .kofi-btn:hover {
+        transform: scale(1.05);
+        box-shadow: 0 15px 30px rgba(255, 94, 91, 0.5);
+        text-shadow: none;
+      }
+
+      /* --- FOOTER --- */
+      .footer {
+        background-color: #000;
+        border-top: 1px solid var(--border);
+        padding: 40px 20px;
+        text-align: center;
+        margin-top: 50px;
+      }
+      .footer h3 {
+        color: var(--neon);
+        font-family: "Impact", sans-serif;
+        margin-bottom: 10px;
+        letter-spacing: 2px;
+      }
+      .footer-links {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-top: 15px;
+      }
+      .footer-links a {
+        color: #888;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: 0.85rem;
+      }
+      .footer-links a:hover {
+        color: var(--neon);
+      }
+
+      @media (max-width: 768px) {
         .wallpaper-display {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            max-width: 900px;
-            margin: 0 auto;
+          grid-template-columns: 1fr;
         }
-        .wallpaper-item {
-            background: var(--dark-grey);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 15px;
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-        .wallpaper-item:hover { transform: translateY(-5px); border-color: var(--neon); }
-        .wallpaper-item img { max-width: 100%; border-radius: 4px; }
-        .wallpaper-item .btn {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 8px 16px;
-            background: var(--neon);
-            color: #000;
-            font-weight: bold;
-            border-radius: 4px;
-        }
-
-        /* --- CARTES & COUNTDOWN --- */
-        .countdown-container {
-            background: #000;
-            border: 1px solid var(--neon);
-            border-radius: 8px;
-            padding: 30px;
-            text-align: center;
-            max-width: 600px;
-            margin: 0 auto 50px;
-            box-shadow: 0 0 30px rgba(124, 255, 0, 0.15);
-        }
-        .countdown-title { font-size: 1.2rem; color: #fff; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 2px;}
         .countdown-timer {
-            font-family: 'Impact', sans-serif;
-            font-size: 3rem;
-            color: var(--neon);
-            letter-spacing: 3px;
-            text-shadow: 0 0 20px rgba(124, 255, 0, 0.4);
+          font-size: 2rem;
         }
+      }
 
-        .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-bottom: 50px;
-        }
-        .card-preview {
-            background: var(--dark-grey);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 20px;
-            text-align: center;
-            transition: transform 0.3s ease, border-color 0.3s ease;
-        }
-        .card-preview:hover {
-            transform: translateY(-8px);
-            border-color: var(--neon);
-            box-shadow: 0 10px 30px rgba(124, 255, 0, 0.1);
-        }
-        .card-preview img { width: 100%; max-width: 200px; border-radius: 8px; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.5); }
-        .card-preview h3 { color: #fff; font-family: 'Impact', sans-serif; font-size: 1.5rem; letter-spacing: 1px; }
-        .card-preview p { color: var(--neon); font-weight: bold; font-size: 0.9rem; margin-top: 5px; }
+      /* --- STYLE DU FOOTER DYNAMIQUE --- */
+      .footer-links {
+        display: flex;
+        justify-content: center;
+        gap: 25px; /* Espace entre les icônes */
+        margin-top: 15px;
+        margin-bottom: 15px;
+      }
 
-        /* --- KOFI BANNER --- */
-        .kofi-banner {
-            background: linear-gradient(145deg, #111, #080808);
-            border: 2px solid var(--kofi);
-            border-radius: 12px;
-            padding: 40px;
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-            overflow: hidden;
-        }
-        .kofi-banner::before {
-            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
-            background: var(--kofi);
-        }
-        .kofi-banner h2 { color: #fff; font-family: 'Impact', sans-serif; font-size: 2rem; margin-bottom: 10px; }
-        .kofi-banner p { color: #ccc; margin-bottom: 25px; font-size: 1.1rem; }
-        .kofi-btn {
-            display: inline-block;
-            background-color: var(--kofi);
-            color: #fff !important;
-            font-weight: bold;
-            font-size: 1.2rem;
-            padding: 15px 40px;
-            border-radius: 50px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 0 10px 20px rgba(255, 94, 91, 0.3);
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        .kofi-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 15px 30px rgba(255, 94, 91, 0.5);
-            text-shadow: none;
-        }
+      .footer-links a {
+        color: #a0a0a0; /* Couleur grise par défaut */
+        font-size: 28px; /* Taille des icônes */
+        transition: all 0.3s ease-in-out; /* Animation fluide */
+      }
 
-        /* --- FOOTER --- */
-        .footer {
-            background-color: #000;
-            border-top: 1px solid var(--border);
-            padding: 40px 20px;
-            text-align: center;
-            margin-top: 50px;
+      /* L'effet magique au survol de la souris */
+      .footer-links a:hover {
+        color: #39ff14; /* Le vert néon Zlormack */
+        transform: translateY(-5px); /* L'icône monte légèrement */
+        text-shadow:
+          0 0 15px #39ff14,
+          0 0 25px #39ff14; /* Effet de halo lumineux */
+      }
+
+      /* ZLORMACK : GADGETS DYNAMIQUES */
+      html {
+        scroll-behavior: smooth;
+      }
+      :focus-visible {
+        outline: 2px solid var(--neon);
+        outline-offset: 4px;
+      }
+      #reading-progress {
+        position: fixed;
+        inset: 0 auto auto 0;
+        width: 0;
+        height: 4px;
+        z-index: 200;
+        background: var(--neon);
+        box-shadow: 0 0 12px var(--neon);
+        pointer-events: none;
+      }
+      .quick-nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        padding: 15px 10px 0;
+      }
+      .quick-nav a {
+        border: 1px solid #31501c;
+        background: #0a1308;
+        border-radius: 99px;
+        padding: 7px 14px;
+        font-size: 0.9rem;
+      }
+      .quick-nav a:hover {
+        background: #182a0c;
+      }
+      .countdown-container {
+        position: relative;
+        overflow: hidden;
+      }
+      .countdown-container::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        box-shadow: inset 0 0 32px rgba(124, 255, 0, 0.07);
+        pointer-events: none;
+      }
+      .countdown-units {
+        display: flex;
+        justify-content: center;
+        gap: 9px;
+        flex-wrap: wrap;
+        margin-top: 10px;
+      }
+      .countdown-unit {
+        min-width: 85px;
+        padding: 9px 12px;
+        background: #0a1307;
+        border: 1px solid #2b4a16;
+        border-radius: 8px;
+      }
+      .countdown-number {
+        display: block;
+        color: var(--neon);
+        font:
+          2.2rem Impact,
+          sans-serif;
+        line-height: 1.2;
+        font-variant-numeric: tabular-nums;
+      }
+      .countdown-label {
+        display: block;
+        font-size: 0.72rem;
+        letter-spacing: 1px;
+        color: #b9c9af;
+        text-transform: uppercase;
+      }
+      .countdown-status {
+        margin-top: 12px;
+        color: #c1c1c1;
+        font-size: 0.9rem;
+      }
+      .site-actions {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin: 18px auto 35px;
+      }
+      .gadget-button {
+        cursor: pointer;
+        font: inherit;
+        color: var(--neon);
+        background: #0a1308;
+        border: 1px solid #416b22;
+        padding: 10px 18px;
+        border-radius: 8px;
+        transition:
+          background 0.2s,
+          transform 0.2s;
+      }
+      .gadget-button:hover {
+        background: #19320c;
+        transform: translateY(-2px);
+      }
+      #back-to-top {
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        z-index: 100;
+        border-radius: 50%;
+        width: 48px;
+        height: 48px;
+        padding: 0;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10px);
+        transition:
+          opacity 0.2s,
+          transform 0.2s,
+          visibility 0.2s;
+      }
+      #back-to-top.visible {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+      .reveal-on-scroll {
+        transition:
+          opacity 0.65s ease,
+          translate 0.65s ease;
+      }
+      .reveal-on-scroll:not(.is-visible) {
+        opacity: 0.15;
+        translate: 0 18px;
+      }
+      .reveal-on-scroll.is-visible {
+        opacity: 1;
+        translate: 0 0;
+      }
+      .card-preview {
+        position: relative;
+        overflow: hidden;
+      }
+      .card-preview::after {
+        content: "";
+        position: absolute;
+        left: -90%;
+        top: -100%;
+        width: 55%;
+        height: 300%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(124, 255, 0, 0.09),
+          transparent
+        );
+        transform: rotate(25deg);
+        transition: left 0.7s;
+        pointer-events: none;
+      }
+      .card-preview:hover::after {
+        left: 145%;
+      }
+      #share-feedback {
+        min-height: 1.5em;
+        text-align: center;
+        color: #c4eaa9;
+        font-size: 0.85rem;
+      }
+      @media (max-width: 600px) {
+        .countdown-unit {
+          min-width: 65px;
+          padding: 8px;
         }
-        .footer h3 { color: var(--neon); font-family: 'Impact', sans-serif; margin-bottom: 10px; letter-spacing: 2px;}
-        .footer-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 15px; }
-        .footer-links a { color: #888; font-weight: bold; text-transform: uppercase; font-size: 0.85rem; }
-        .footer-links a:hover { color: var(--neon); }
-
-        @media (max-width: 768px) {
-            .wallpaper-display { grid-template-columns: 1fr; }
-            .countdown-timer { font-size: 2rem; }
+        .countdown-number {
+          font-size: 1.65rem;
         }
-    
-        /* --- STYLE DU FOOTER DYNAMIQUE --- */
-.footer-links {
-    display: flex;
-    justify-content: center;
-    gap: 25px; /* Espace entre les icônes */
-    margin-top: 15px;
-    margin-bottom: 15px;
-}
-
-.footer-links a {
-    color: #a0a0a0; /* Couleur grise par défaut */
-    font-size: 28px; /* Taille des icônes */
-    transition: all 0.3s ease-in-out; /* Animation fluide */
-}
-
-/* L'effet magique au survol de la souris */
-.footer-links a:hover {
-    color: #39FF14; /* Le vert néon Zlormack */
-    transform: translateY(-5px); /* L'icône monte légèrement */
-    text-shadow: 0 0 15px #39FF14, 0 0 25px #39FF14; /* Effet de halo lumineux */
-}
+        .quick-nav {
+          gap: 6px;
+        }
+        .quick-nav a {
+          font-size: 0.8rem;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          transition-duration: 0.01ms !important;
+        }
+        .reveal-on-scroll:not(.is-visible) {
+          opacity: 1;
+          translate: none;
+        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
+    <div id="reading-progress" aria-hidden="true"></div>
 
     <header class="header">
-        <h1><a href="./">ZLOR<span>MACK</span> GAMING</a></h1>
-        <p>Plus qu'un jeu, une communauté.</p>
+      <h1>
+        <a href="./">ZLOR<span>MACK</span> GAMING</a>
+      </h1>
+      <p>Plus qu'un jeu, une communauté.</p>
     </header>
 
+    <nav class="quick-nav" aria-label="Navigation rapide">
+      <a href="#wallpapers">🐺 Wallpapers</a>
+      <a href="#cartes">✦ Cartes</a>
+      <a href="#concours-noel">🎄 Concours</a>
+      <a href="#rejoindre-meute">💚 La Meute</a>
+    </nav>
     <div class="container">
+      <!-- CONCOURS DE NOËL ZLORMACK 2026 -->
+      <section
+        id="concours-noel"
+        style="
+          background: #101010;
+          border: 2px solid #7cff00;
+          border-radius: 12px;
+          padding: 28px 20px;
+          margin: 30px 0;
+          text-align: center;
+        "
+      >
+        <h2 style="color: #7cff00; margin-bottom: 12px">
+          🎄 Concours de Noël Zlormack 2026
+        </h2>
+        <p>Du 15 au 20 décembre 2026 — 3 lots numériques à gagner !</p>
+        <p>Participation gratuite et sans obligation d'achat.</p>
+        <p style="margin-top: 20px">
+          <a
+            href="https://gleam.io/GZyye/concours-de-noel-zlormack"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            🎁 Accéder au concours
+          </a>
+        </p>
+        <p style="margin-top: 12px">
+          <a href="reglement-concours-noel.html">
+            📜 Consulter le règlement officiel
+          </a>
+        </p>
+      </section>
 
-        <!-- CONCOURS DE NOËL ZLORMACK 2026 -->
-        <section id="concours-noel" style="background:#101010; border:2px solid #7cff00; border-radius:12px; padding:28px 20px; margin:30px 0; text-align:center;">
-            <h2 style="color:#7cff00; margin-bottom:12px;">
-                🎄 Concours de Noël Zlormack 2026
-            </h2>
-            <p>Du 15 au 20 décembre 2026 — 3 lots numériques à gagner !</p>
-            <p>Participation gratuite et sans obligation d'achat.</p>
-            <p style="margin-top:20px;">
-                <a href="https://gleam.io/GZyye/concours-de-noel-zlormack" target="_blank" rel="noopener noreferrer">
-                    🎁 Accéder au concours
-                </a>
-            </p>
-            <p style="margin-top:12px;">
-                <a href="reglement-concours-noel.html">
-                    📜 Consulter le règlement officiel
-                </a>
-            </p>
-        </section>
+      <!-- SECTION WALLPAPERS -->
+      <section class="section" id="wallpapers">
+        <h2 class="section-title">Wallpapers du jour</h2>
+        <p class="section-desc">
+          Un nouveau fond d'écran gratuit chaque matin pour PC et Mobile.
+        </p>
 
+        <div class="wallpaper-display">
+          <!-- Ces liens seront mis à jour par ton robot GitHub Actions ou manuellement -->
+          <div class="wallpaper-item">
+            <img
+              src="wallpapers/2026-11-17/pc-vignette.jpg"
+              alt="Wallpaper PC du jour"
+              onerror="this.src = 'img/logo.png'"
+            />
+            <p>Version PC (16:9)</p>
+            <a
+              href="wallpapers/2026-11-17/pc-signe.jpg"
+              class="btn"
+              target="_blank"
+              >Télécharger</a
+            >
+          </div>
+          <div class="wallpaper-item">
+            <img
+              src="wallpapers/2026-11-17/mobile-vignette.jpg"
+              alt="Wallpaper Mobile du jour"
+              onerror="this.src = 'img/logo.png'"
+            />
+            <p>Version Mobile (9:16)</p>
+            <a
+              href="wallpapers/2026-11-17/mobile-signe.jpg"
+              class="btn"
+              target="_blank"
+              >Télécharger</a
+            >
+          </div>
+        </div>
+      </section>
 
+      <!-- SECTION CARTES -->
+      <section class="section" id="cartes">
+        <h2 class="section-title">Cartes à collectionner</h2>
+        <p class="section-desc">
+          L'univers des loups Zlormack arrive. Préparez-vous pour la révélation.
+        </p>
 
-        <!-- SECTION WALLPAPERS -->
-        <section class="section" id="wallpapers">
-            <h2 class="section-title">Wallpapers du jour</h2>
-            <p class="section-desc">Un nouveau fond d'écran gratuit chaque matin pour PC et Mobile.</p>
-            
-            <div class="wallpaper-display">
-                <!-- Ces liens seront mis à jour par ton robot GitHub Actions ou manuellement -->
-                <div class="wallpaper-item">
-                    <img src="wallpapers/2026-11-16/pc-vignette.jpg" alt="Wallpaper PC du jour" onerror="this.src='img/logo.png'">
-                    <p>Version PC (16:9)</p>
-                    <a href="wallpapers/2026-11-16/pc-signe.jpg" class="btn" target="_blank">Télécharger</a>
-                </div>
-                <div class="wallpaper-item">
-                    <img src="wallpapers/2026-11-16/mobile-vignette.jpg" alt="Wallpaper Mobile du jour" onerror="this.src='img/logo.png'">
-                    <p>Version Mobile (9:16)</p>
-                    <a href="wallpapers/2026-11-16/mobile-signe.jpg" class="btn" target="_blank">Télécharger</a>
-                </div>
+        <!-- Compte à rebours -->
+        <div class="countdown-container">
+          <div class="countdown-title">Ouverture de la galerie</div>
+          <div
+            class="countdown-units"
+            id="countdown-timer"
+            role="timer"
+            aria-label="Temps restant avant l'ouverture"
+          >
+            <div class="countdown-unit">
+              <span class="countdown-number" id="days">--</span
+              ><span class="countdown-label">Jours</span>
             </div>
-        </section>
-
-        <!-- SECTION CARTES -->
-        <section class="section" id="cartes">
-            <h2 class="section-title">Cartes à collectionner</h2>
-            <p class="section-desc">L'univers des loups Zlormack arrive. Préparez-vous pour la révélation.</p>
-
-            <!-- Compte à rebours -->
-            <div class="countdown-container">
-                <div class="countdown-title">Ouverture de la galerie</div>
-                <div class="countdown-timer" id="countdown-timer">Chargement...</div>
-                <div style="color: #888; font-size: 0.9rem; margin-top: 10px;">9 Décembre à 00h12</div>
+            <div class="countdown-unit">
+              <span class="countdown-number" id="hours">--</span
+              ><span class="countdown-label">Heures</span>
             </div>
-
-            <!-- Aperçu des niveaux de cartes -->
-            <div class="cards-grid">
-                <div class="card-preview">
-                    <img src="img/lune-de-novembre.webp" alt="Carte Niveau 1 Basique" onerror="this.src='img/logo.png'">
-                    <h3>Niveau 1 - Basique</h3>
-                    <p>Gratuit & Illimité</p>
-                </div>
-                <div class="card-preview">
-                    <img src="img/dos-niveau2.webp" alt="Carte Niveau 2 Métal" onerror="this.src='img/logo.png'">
-                    <h3>Niveau 2 - Métal</h3>
-                    <p>Édition limitée (200)</p>
-                </div>
-                <div class="card-preview">
-                    <img src="img/dos-niveau3.webp" alt="Carte Niveau 3 Or" onerror="this.src='img/logo.png'">
-                    <h3>Niveau 3 - Or</h3>
-                    <p>Édition limitée (50)</p>
-                </div>
-                <div class="card-preview">
-                    <img src="img/dos-niveau4.webp" alt="Carte Niveau 4 Holo" onerror="this.src='img/logo.png'">
-                    <h3>Niveau 4 - Holo</h3>
-                    <p>Édition limitée (25)</p>
-                </div>
+            <div class="countdown-unit">
+              <span class="countdown-number" id="minutes">--</span
+              ><span class="countdown-label">Minutes</span>
             </div>
-
-            <!-- Bannière Ko-fi -->
-            <div class="kofi-banner">
-                <h2>Rejoignez la meute</h2>
-                <p>Zlormack Gaming est un projet 100% gratuit. Si vous aimez mes créations et que vous voulez m'aider à continuer à développer cet univers, vous pouvez m'offrir un café !</p>
-                <a href="https://ko-fi.com/zlormackgaming" target="_blank" class="kofi-btn">Soutenir sur Ko-fi</a>
+            <div class="countdown-unit">
+              <span class="countdown-number" id="seconds">--</span
+              ><span class="countdown-label">Secondes</span>
             </div>
-        </section>
+          </div>
+          <div class="countdown-status" id="countdown-status">
+            9 décembre 2026 à 00 h 12 · heure de Paris
+          </div>
+        </div>
 
+        <div class="site-actions">
+          <button class="gadget-button" id="share-site" type="button">
+            🔗 Partager Zlormack
+          </button>
+        </div>
+        <p id="share-feedback" role="status" aria-live="polite"></p>
+
+        <!-- Aperçu des niveaux de cartes -->
+        <div class="cards-grid">
+          <div class="card-preview">
+            <img
+              src="img/lune-de-novembre.webp"
+              alt="Carte Niveau 1 Basique"
+              onerror="this.src = 'img/logo.png'"
+            />
+            <h3>Niveau 1 - Basique</h3>
+            <p>Gratuit & Illimité</p>
+          </div>
+          <div class="card-preview">
+            <img
+              src="img/dos-niveau2.webp"
+              alt="Carte Niveau 2 Métal"
+              onerror="this.src = 'img/logo.png'"
+            />
+            <h3>Niveau 2 - Métal</h3>
+            <p>Édition limitée (200)</p>
+          </div>
+          <div class="card-preview">
+            <img
+              src="img/dos-niveau3.webp"
+              alt="Carte Niveau 3 Or"
+              onerror="this.src = 'img/logo.png'"
+            />
+            <h3>Niveau 3 - Or</h3>
+            <p>Édition limitée (50)</p>
+          </div>
+          <div class="card-preview">
+            <img
+              src="img/dos-niveau4.webp"
+              alt="Carte Niveau 4 Holo"
+              onerror="this.src = 'img/logo.png'"
+            />
+            <h3>Niveau 4 - Holo</h3>
+            <p>Édition limitée (25)</p>
+          </div>
+        </div>
+
+        <!-- Bannière Ko-fi -->
+        <div class="kofi-banner" id="rejoindre-meute">
+          <h2>Rejoignez la meute</h2>
+          <p>
+            Zlormack Gaming est un projet 100% gratuit. Si vous aimez mes
+            créations et que vous voulez m'aider à continuer à développer cet
+            univers, vous pouvez m'offrir un café !
+          </p>
+          <a
+            href="https://ko-fi.com/zlormackgaming"
+            target="_blank"
+            class="kofi-btn"
+            >Soutenir sur Ko-fi</a
+          >
+        </div>
+      </section>
     </div>
 
+    <button
+      id="back-to-top"
+      class="gadget-button"
+      type="button"
+      aria-label="Remonter en haut de page"
+      title="Remonter en haut"
+    >
+      ↑
+    </button>
     <footer class="footer">
-  <div class="footer-links">
-    <a href="https://zlormann.github.io/zlormack/" title="Galerie / Wallpapers"><i class="fa-solid fa-desktop"></i></a>
-    <a href="https://ko-fi.com/zlormackgaming" target="_blank" title="Soutenir sur Ko-fi"><i class="fa-solid fa-mug-hot"></i></a>
-    <a href="https://www.instagram.com/zlormacky/" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-    <a href="https://www.youtube.com/@Zlormack" target="_blank" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
-    <a href="https://discord.com/invite/F3vUgGazyG" target="_blank" title="Rejoindre le Discord"><i class="fa-brands fa-discord"></i></a>
-    <a href="https://zlormack-game-enjoy.blogspot.com/" target="_blank" title="Le Blog"><i class="fa-solid fa-blog"></i></a>
-</div>
-        
-        <nav id="liens-legaux" aria-label="Informations légales"
-             style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap; margin-top:25px; font-size:14px;">
-            <a href="mentions-legales.html">Mentions légales</a>
-            <a href="confidentialite.html">Politique de confidentialité</a>
-        </nav>
+      <div class="footer-links">
+        <a
+          href="https://zlormann.github.io/zlormack/"
+          title="Galerie / Wallpapers"
+          ><i class="fa-solid fa-desktop"></i
+        ></a>
+        <a
+          href="https://ko-fi.com/zlormackgaming"
+          target="_blank"
+          title="Soutenir sur Ko-fi"
+          ><i class="fa-solid fa-mug-hot"></i
+        ></a>
+        <a
+          href="https://www.instagram.com/zlormacky/"
+          target="_blank"
+          title="Instagram"
+          ><i class="fa-brands fa-instagram"></i
+        ></a>
+        <a
+          href="https://www.youtube.com/@Zlormack"
+          target="_blank"
+          title="YouTube"
+          ><i class="fa-brands fa-youtube"></i
+        ></a>
+        <a
+          href="https://discord.com/invite/F3vUgGazyG"
+          target="_blank"
+          title="Rejoindre le Discord"
+          ><i class="fa-brands fa-discord"></i
+        ></a>
+        <a
+          href="https://zlormack-game-enjoy.blogspot.com/"
+          target="_blank"
+          title="Le Blog"
+          ><i class="fa-solid fa-blog"></i
+        ></a>
+      </div>
 
-        <p style="margin-top: 20px; font-size: 0.75rem; color: #555;">© 2026 Zlormack Gaming. Tous droits réservés.</p>
+      <nav
+        id="liens-legaux"
+        aria-label="Informations légales"
+        style="
+          display: flex;
+          justify-content: center;
+          gap: 20px;
+          flex-wrap: wrap;
+          margin-top: 25px;
+          font-size: 14px;
+        "
+      >
+        <a href="mentions-legales.html">Mentions légales</a>
+        <a href="confidentialite.html">Politique de confidentialité</a>
+      </nav>
+
+      <p style="margin-top: 20px; font-size: 0.75rem; color: #555">
+        © 2026 Zlormack Gaming. Tous droits réservés.
+      </p>
     </footer>
 
-    
-
     <script>
-        var countDownDate = new Date("Dec 09, 2026 00:12:00").getTime();
-        var x = setInterval(function() {
-            var now = new Date().getTime();
-            var distance = countDownDate - now;
-            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-            var timerElement = document.getElementById("countdown-timer");
-            if (timerElement) {
-                if (distance < 0) {
-                    clearInterval(x);
-                    timerElement.innerHTML = "OUVERT !";
-                } else {
-                    timerElement.innerHTML = days + "j " + hours + "h " + minutes + "m " + seconds + "s";
-                }
+      (() => {
+        "use strict";
+        // 00 h 12 le 9 décembre 2026 à Paris (heure d'hiver : UTC+1).
+        const openingTime = Date.parse("2026-12-08T23:12:00Z");
+        const $ = (id) => document.getElementById(id);
+        const pad = (n) => String(n).padStart(2, "0");
+        function updateCountdown() {
+          const remaining = Math.max(0, openingTime - Date.now());
+          const totalSeconds = Math.floor(remaining / 1000);
+          $("days").textContent = Math.floor(totalSeconds / 86400);
+          $("hours").textContent = pad(
+            Math.floor((totalSeconds % 86400) / 3600),
+          );
+          $("minutes").textContent = pad(
+            Math.floor((totalSeconds % 3600) / 60),
+          );
+          $("seconds").textContent = pad(totalSeconds % 60);
+          if (remaining === 0) {
+            $("countdown-status").textContent = "🐺 La galerie est ouverte !";
+            clearInterval(countdownInterval);
+          }
+        }
+        const countdownInterval = setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        const progress = $("reading-progress");
+        const topButton = $("back-to-top");
+        let scrollQueued = false;
+        function updateScroll() {
+          const maxScroll = Math.max(
+            1,
+            document.documentElement.scrollHeight - window.innerHeight,
+          );
+          progress.style.width =
+            Math.min(100, (window.scrollY / maxScroll) * 100) + "%";
+          topButton.classList.toggle("visible", window.scrollY > 350);
+          scrollQueued = false;
+        }
+        window.addEventListener(
+          "scroll",
+          () => {
+            if (!scrollQueued) {
+              scrollQueued = true;
+              requestAnimationFrame(updateScroll);
             }
-        }, 1000);
+          },
+          { passive: true },
+        );
+        updateScroll();
+        topButton.addEventListener("click", () =>
+          window.scrollTo({
+            top: 0,
+            behavior: matchMedia("(prefers-reduced-motion: reduce)").matches
+              ? "instant"
+              : "smooth",
+          }),
+        );
+
+        if (
+          "IntersectionObserver" in window &&
+          !matchMedia("(prefers-reduced-motion: reduce)").matches
+        ) {
+          const observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add("is-visible");
+                  observer.unobserve(entry.target);
+                }
+              });
+            },
+            { threshold: 0.08 },
+          );
+          document
+            .querySelectorAll(
+              ".wallpaper-item, .card-preview, .kofi-banner, #concours-noel",
+            )
+            .forEach((element) => {
+              element.classList.add("reveal-on-scroll");
+              observer.observe(element);
+            });
+        }
+
+        $("share-site").addEventListener("click", async () => {
+          const url = "https://zlormann.github.io/zlormack/";
+          const feedback = $("share-feedback");
+          try {
+            if (navigator.share) {
+              await navigator.share({
+                title: "Zlormack Gaming",
+                text: "Rejoins la Meute ! 🐺💚",
+                url,
+              });
+              feedback.textContent = "Merci de partager Zlormack !";
+            } else if (navigator.clipboard && window.isSecureContext) {
+              await navigator.clipboard.writeText(url);
+              feedback.textContent = "Lien du site copié !";
+            } else {
+              feedback.textContent = "Lien à partager : " + url;
+            }
+          } catch (error) {
+            if (error.name !== "AbortError")
+              feedback.textContent = "Lien à partager : " + url;
+          }
+        });
+      })();
     </script>
-    
-</body>
+  </body>
 </html>

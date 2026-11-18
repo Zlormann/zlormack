@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
 Sitemap: https://zlormann.github.io/zlormack/sitemap.xml
