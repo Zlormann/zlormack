@@ -588,7 +588,7 @@ figcaption .lk [hidden] { display: none; }
     for (var i = 0; i < cards.length; i++) {
       cards[i].setAttribute('aria-current', String(cards[i].getAttribute('data-date') === day.date));
     }
-    document.title = "Cartes à collectionner Zlormack : loups, niveaux et packs";
+
   }
   function buildGrid() {
     var ol = $('grid'); ol.textContent = '';
@@ -663,6 +663,9 @@ figcaption .lk [hidden] { display: none; }
     }
     if (currentTab !== null && currentTab !== name && window.scrollY > 0) window.scrollTo(0, 0);
     currentTab = name;
+    document.title = name === 'cartes'
+      ? 'Cartes à collectionner Zlormack : loups, niveaux et packs'
+      : 'Wallpapers gaming gratuits PC et mobile | Zlormack Gaming';
   }
   // Onglet de départ : « wallpapers » sur la page d'accueil, « cartes » sur la page /cartes/ du site public (le script de copie y pose window.ZLO_START).
   var START = window.ZLO_START === 'cartes' ? 'cartes' : 'wallpapers';
