@@ -1,20 +1,20 @@
 {
- "updated": "2026-11-18",
+ "updated": "2026-11-19",
  "keepDays": 30,
  "days": [
   {
-   "date": "2026-11-18",
-   "theme": "La forêt de brume",
-   "themeId": "foret-brume",
-   "tagline": "SAME GAME, DIFFERENT LEVEL",
+   "date": "2026-11-19",
+   "theme": "L'aurore sur le lac",
+   "themeId": "aurore-lac",
+   "tagline": "PLAY · CREATE · PROGRESS · TOGETHER",
    "source": "ia",
    "files": {
-    "pcClean": "wallpapers/2026-11-18/pc-sans-texte.jpg",
-    "pcSigned": "wallpapers/2026-11-18/pc-signe.jpg",
-    "pcThumb": "wallpapers/2026-11-18/pc-vignette.jpg",
-    "mobileClean": "wallpapers/2026-11-18/mobile-sans-texte.jpg",
-    "mobileSigned": "wallpapers/2026-11-18/mobile-signe.jpg",
-    "mobileThumb": "wallpapers/2026-11-18/mobile-vignette.jpg"
+    "pcClean": "wallpapers/2026-11-19/pc-sans-texte.jpg",
+    "pcSigned": "wallpapers/2026-11-19/pc-signe.jpg",
+    "pcThumb": "wallpapers/2026-11-19/pc-vignette.jpg",
+    "mobileClean": "wallpapers/2026-11-19/mobile-sans-texte.jpg",
+    "mobileSigned": "wallpapers/2026-11-19/mobile-signe.jpg",
+    "mobileThumb": "wallpapers/2026-11-19/mobile-vignette.jpg"
    }
   }
  ]
