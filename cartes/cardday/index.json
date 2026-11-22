@@ -1,6 +1,21 @@
 {
   "days": [
     {
+      "date": "2026-11-22",
+      "cards": [
+        {
+          "file": "22-11-2026-CardDay-Holographique.jpeg",
+          "level": "Holographique",
+          "url": "https://zlormann.github.io/zlormack/cartes/cardday/2026-11-22/22-11-2026-CardDay-Holographique.jpeg"
+        },
+        {
+          "file": "22-11-2026-CardDay-Or.jpeg",
+          "level": "Or",
+          "url": "https://zlormann.github.io/zlormack/cartes/cardday/2026-11-22/22-11-2026-CardDay-Or.jpeg"
+        }
+      ]
+    },
+    {
       "date": "2026-11-21",
       "cards": [
         {
