@@ -1,20 +1,20 @@
 {
- "updated": "2026-11-21",
+ "updated": "2026-11-22",
  "keepDays": 30,
  "days": [
   {
-   "date": "2026-11-21",
-   "theme": "Le château dans l'orage",
-   "themeId": "chateau-orage",
-   "tagline": "PASSION · GAMEPLAY · COMMUNAUTÉ",
+   "date": "2026-11-22",
+   "theme": "La zone de combat",
+   "themeId": "zone-fps",
+   "tagline": "MÊME JEU, MÊME PASSION",
    "source": "ia",
    "files": {
-    "pcClean": "wallpapers/2026-11-21/pc-sans-texte.jpg",
-    "pcSigned": "wallpapers/2026-11-21/pc-signe.jpg",
-    "pcThumb": "wallpapers/2026-11-21/pc-vignette.jpg",
-    "mobileClean": "wallpapers/2026-11-21/mobile-sans-texte.jpg",
-    "mobileSigned": "wallpapers/2026-11-21/mobile-signe.jpg",
-    "mobileThumb": "wallpapers/2026-11-21/mobile-vignette.jpg"
+    "pcClean": "wallpapers/2026-11-22/pc-sans-texte.jpg",
+    "pcSigned": "wallpapers/2026-11-22/pc-signe.jpg",
+    "pcThumb": "wallpapers/2026-11-22/pc-vignette.jpg",
+    "mobileClean": "wallpapers/2026-11-22/mobile-sans-texte.jpg",
+    "mobileSigned": "wallpapers/2026-11-22/mobile-signe.jpg",
+    "mobileThumb": "wallpapers/2026-11-22/mobile-vignette.jpg"
    }
   }
  ]
