@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='utf-8'?>
 <rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0">
   <channel>
-    <title>Zlormack Gaming — Wallpapers et cartes gratuites</title>
+    <title>Zlormack Gaming — Wallpapers PC et mobile</title>
     <link>https://zlormann.github.io/zlormack/</link>
-    <description>Nouveaux wallpapers PC et mobile et cartes gratuites Zlormack Gaming.</description>
+    <description>Wallpapers PC et mobile gratuits publiés sur Zlormack Gaming.</description>
     <language>fr-FR</language>
     <atom:link href="https://zlormann.github.io/zlormack/feed.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -25,26 +25,6 @@
       <pubDate>Tue, 24 Nov 2026 12:00:00 GMT</pubDate>
       <media:content url="https://zlormann.github.io/zlormack/wallpapers/2026-11-24/mobile-signe.jpg" medium="image" type="image/jpeg" />
       <enclosure url="https://zlormann.github.io/zlormack/wallpapers/2026-11-24/mobile-signe.jpg" type="image/jpeg" length="0" />
-    </item>
-    <item>
-      <title>Carte gratuite Zlormack — Lune de novembre</title>
-      <link>https://zlormann.github.io/zlormack/cartes-gratuites/lune-de-novembre-niveau1.png</link>
-      <guid isPermaLink="true">https://zlormann.github.io/zlormack/cartes-gratuites/lune-de-novembre-niveau1.png</guid>
-      <description>Carte numérique gratuite de niveau 1 : Lune de novembre.</description>
-      <category>Cartes gratuites</category>
-      <pubDate>Mon, 09 Nov 2026 12:00:00 GMT</pubDate>
-      <media:content url="https://zlormann.github.io/zlormack/cartes-gratuites/lune-de-novembre-niveau1.png" medium="image" type="image/png" />
-      <enclosure url="https://zlormann.github.io/zlormack/cartes-gratuites/lune-de-novembre-niveau1.png" type="image/png" length="0" />
-    </item>
-    <item>
-      <title>Carte gratuite Zlormack — Lune de givre</title>
-      <link>https://zlormann.github.io/zlormack/cartes-gratuites/lune-de-givre-niveau1.png</link>
-      <guid isPermaLink="true">https://zlormann.github.io/zlormack/cartes-gratuites/lune-de-givre-niveau1.png</guid>
-      <description>Carte numérique gratuite de niveau 1 : Lune de givre.</description>
-      <category>Cartes gratuites</category>
-      <pubDate>Mon, 09 Nov 2026 12:00:00 GMT</pubDate>
-      <media:content url="https://zlormann.github.io/zlormack/cartes-gratuites/lune-de-givre-niveau1.png" medium="image" type="image/png" />
-      <enclosure url="https://zlormann.github.io/zlormack/cartes-gratuites/lune-de-givre-niveau1.png" type="image/png" length="0" />
     </item>
   </channel>
 </rss>

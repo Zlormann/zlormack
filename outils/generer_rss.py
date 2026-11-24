@@ -35,8 +35,8 @@ def main():
     data = json.loads((ROOT / 'index.json').read_text(encoding='utf-8'))
     rss = ET.Element('rss', {'version': '2.0'})
     channel = ET.SubElement(rss, 'channel')
-    for tag, val in [('title', 'Zlormack Gaming — Wallpapers et cartes gratuites'),
-                     ('link', BASE), ('description', 'Nouveaux wallpapers PC et mobile et cartes gratuites Zlormack Gaming.'),
+    for tag, val in [('title', 'Zlormack Gaming — Wallpapers PC et mobile'),
+                     ('link', BASE), ('description', 'Wallpapers PC et mobile gratuits publiés sur Zlormack Gaming.'),
                      ('language', 'fr-FR')]:
         ET.SubElement(channel, tag).text = val
     ET.SubElement(channel, '{http://www.w3.org/2005/Atom}link', {
@@ -49,12 +49,6 @@ def main():
             if path and (ROOT / path).is_file():
                 add_item(channel, f'Wallpaper {label} — {theme} ({date})', path, date,
                          'Wallpapers gratuits', f'Fond d’écran {label} gratuit : {theme}. Téléchargement sur Zlormack Gaming.')
-    cards = [('Lune de novembre', 'cartes-gratuites/lune-de-novembre-niveau1.png', '2026-11-09'),
-             ('Lune de givre', 'cartes-gratuites/lune-de-givre-niveau1.png', '2026-11-09')]
-    for name, path, date in cards:
-        if (ROOT / path).is_file():
-            add_item(channel, f'Carte gratuite Zlormack — {name}', path, date,
-                     'Cartes gratuites', f'Carte numérique gratuite de niveau 1 : {name}.')
     tree = ET.ElementTree(rss)
     ET.indent(tree, space='  ')
     tree.write(ROOT / 'feed.xml', encoding='utf-8', xml_declaration=True)
