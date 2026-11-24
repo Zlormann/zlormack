@@ -1,6 +1,16 @@
 {
   "days": [
     {
+      "date": "2026-11-24",
+      "cards": [
+        {
+          "file": "24-11-2026-CardDay-Metal.jpeg",
+          "level": "Métal",
+          "url": "https://zlormann.github.io/zlormack/cartes/cardday/2026-11-24/24-11-2026-CardDay-Metal.jpeg"
+        }
+      ]
+    },
+    {
       "date": "2026-11-23",
       "cards": [
         {
