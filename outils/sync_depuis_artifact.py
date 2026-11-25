@@ -27,7 +27,7 @@ import re
 import shutil
 import sys
 
-BASE_URL = "https://zlormann.github.io/zlormack/"
+BASE_URL = "https://zlormack.com/"
 CARTES_URL = BASE_URL + "cartes/"
 YOUTUBE_URL = "https://www.youtube.com/@Zlormack"
 BLOG_URL = "https://zlormack-game-enjoy.blogspot.com/"
