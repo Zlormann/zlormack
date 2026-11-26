@@ -616,7 +616,7 @@
         </p>
 
         <div class="wallpaper-display">
-          <!-- Ces liens seront mis à jour par ton robot GitHub Actions ou manuellement -->
+          <!-- Liens de secours, actualisés automatiquement depuis index.json -->
           <div class="wallpaper-item">
             <img
               src="wallpapers/2026-11-17/pc-vignette.jpg"
@@ -646,6 +646,36 @@
             >
           </div>
         </div>
+        <script>
+          (async () => {
+            try {
+              const response = await fetch("index.json", { cache: "no-store" });
+              if (!response.ok) throw new Error("HTTP " + response.status);
+              const data = await response.json();
+              const keys = ["pcThumb", "pcSigned", "mobileThumb", "mobileSigned"];
+              const latest = (Array.isArray(data.days) ? data.days : [])
+                .filter(day => day && typeof day.date === "string" &&
+                  /^\d{4}-\d{2}-\d{2}$/.test(day.date) && day.files &&
+                  keys.every(key => typeof day.files[key] === "string" &&
+                    day.files[key].startsWith("wallpapers/" + day.date + "/")))
+                .sort((a, b) => b.date.localeCompare(a.date))[0];
+              if (!latest) throw new Error("Aucun wallpaper disponible");
+              const items = document.querySelectorAll("#wallpapers .wallpaper-item");
+              if (items.length !== 2) throw new Error("Section wallpapers inattendue");
+              const paths = keys.map(key => new URL(latest.files[key], document.baseURI));
+              if (paths.some(url => url.origin !== location.origin ||
+                  !url.pathname.startsWith(new URL("wallpapers/" + latest.date + "/", document.baseURI).pathname))) {
+                throw new Error("Chemin wallpaper invalide");
+              }
+              items[0].querySelector("img").src = paths[0].href;
+              items[0].querySelector("a.btn").href = paths[1].href;
+              items[1].querySelector("img").src = paths[2].href;
+              items[1].querySelector("a.btn").href = paths[3].href;
+            } catch (error) {
+              console.warn("Wallpapers du jour : affichage de secours conservé.", error);
+            }
+          })();
+        </script>
       </section>
 
       <!-- SECTION CARTES -->
