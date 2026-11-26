@@ -7,7 +7,7 @@ from urllib.parse import quote
 import xml.etree.ElementTree as ET
 
 ROOT = Path(__file__).resolve().parents[1]
-BASE = 'https://zlormack.pages.dev/'
+BASE = 'https://zlormack.com/'
 ET.register_namespace('media', 'http://search.yahoo.com/mrss/')
 ET.register_namespace('atom', 'http://www.w3.org/2005/Atom')
 

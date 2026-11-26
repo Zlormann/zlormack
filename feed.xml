@@ -2,29 +2,29 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0">
   <channel>
     <title>Zlormack Gaming — Wallpapers PC et mobile</title>
-    <link>https://zlormack.pages.dev/</link>
+    <link>https://zlormack.com/</link>
     <description>Wallpapers PC et mobile gratuits publiés sur Zlormack Gaming.</description>
     <language>fr-FR</language>
-    <atom:link href="https://zlormack.pages.dev/feed.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://zlormack.com/feed.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Wallpaper PC — L'aurore sur le lac (2026-11-26)</title>
-      <link>https://zlormack.pages.dev/wallpapers/2026-11-26/pc-signe.jpg</link>
-      <guid isPermaLink="true">https://zlormack.pages.dev/wallpapers/2026-11-26/pc-signe.jpg</guid>
+      <link>https://zlormack.com/wallpapers/2026-11-26/pc-signe.jpg</link>
+      <guid isPermaLink="true">https://zlormack.com/wallpapers/2026-11-26/pc-signe.jpg</guid>
       <description>Fond d’écran PC gratuit : L'aurore sur le lac. Téléchargement sur Zlormack Gaming.</description>
       <category>Wallpapers gratuits</category>
       <pubDate>Thu, 26 Nov 2026 12:00:00 GMT</pubDate>
-      <media:content url="https://zlormack.pages.dev/wallpapers/2026-11-26/pc-signe.jpg" medium="image" type="image/jpeg" />
-      <enclosure url="https://zlormack.pages.dev/wallpapers/2026-11-26/pc-signe.jpg" type="image/jpeg" length="0" />
+      <media:content url="https://zlormack.com/wallpapers/2026-11-26/pc-signe.jpg" medium="image" type="image/jpeg" />
+      <enclosure url="https://zlormack.com/wallpapers/2026-11-26/pc-signe.jpg" type="image/jpeg" length="0" />
     </item>
     <item>
       <title>Wallpaper mobile — L'aurore sur le lac (2026-11-26)</title>
-      <link>https://zlormack.pages.dev/wallpapers/2026-11-26/mobile-signe.jpg</link>
-      <guid isPermaLink="true">https://zlormack.pages.dev/wallpapers/2026-11-26/mobile-signe.jpg</guid>
+      <link>https://zlormack.com/wallpapers/2026-11-26/mobile-signe.jpg</link>
+      <guid isPermaLink="true">https://zlormack.com/wallpapers/2026-11-26/mobile-signe.jpg</guid>
       <description>Fond d’écran mobile gratuit : L'aurore sur le lac. Téléchargement sur Zlormack Gaming.</description>
       <category>Wallpapers gratuits</category>
       <pubDate>Thu, 26 Nov 2026 12:00:00 GMT</pubDate>
-      <media:content url="https://zlormack.pages.dev/wallpapers/2026-11-26/mobile-signe.jpg" medium="image" type="image/jpeg" />
-      <enclosure url="https://zlormack.pages.dev/wallpapers/2026-11-26/mobile-signe.jpg" type="image/jpeg" length="0" />
+      <media:content url="https://zlormack.com/wallpapers/2026-11-26/mobile-signe.jpg" medium="image" type="image/jpeg" />
+      <enclosure url="https://zlormack.com/wallpapers/2026-11-26/mobile-signe.jpg" type="image/jpeg" length="0" />
     </item>
   </channel>
 </rss>
