@@ -1,20 +1,20 @@
 {
- "updated": "2026-11-26",
+ "updated": "2026-11-27",
  "keepDays": 30,
  "days": [
   {
-   "date": "2026-11-26",
-   "theme": "L'aurore sur le lac",
-   "themeId": "aurore-lac",
-   "tagline": "PLAY · CREATE · PROGRESS · TOGETHER",
+   "date": "2026-11-27",
+   "theme": "La salle d'arcade",
+   "themeId": "salle-retro",
+   "tagline": "TOUJOURS PLUS LOIN",
    "source": "ia",
    "files": {
-    "pcClean": "wallpapers/2026-11-26/pc-sans-texte.jpg",
-    "pcSigned": "wallpapers/2026-11-26/pc-signe.jpg",
-    "pcThumb": "wallpapers/2026-11-26/pc-vignette.jpg",
-    "mobileClean": "wallpapers/2026-11-26/mobile-sans-texte.jpg",
-    "mobileSigned": "wallpapers/2026-11-26/mobile-signe.jpg",
-    "mobileThumb": "wallpapers/2026-11-26/mobile-vignette.jpg"
+    "pcClean": "wallpapers/2026-11-27/pc-sans-texte.jpg",
+    "pcSigned": "wallpapers/2026-11-27/pc-signe.jpg",
+    "pcThumb": "wallpapers/2026-11-27/pc-vignette.jpg",
+    "mobileClean": "wallpapers/2026-11-27/mobile-sans-texte.jpg",
+    "mobileSigned": "wallpapers/2026-11-27/mobile-signe.jpg",
+    "mobileThumb": "wallpapers/2026-11-27/mobile-vignette.jpg"
    }
   }
  ]
